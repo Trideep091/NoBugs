@@ -1,11 +1,9 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { useAuth } from '../../context/AuthContext';
-import { Sun, Moon, ShieldAlert, LogOut, User, Activity, Sparkles } from 'lucide-react';
+import { Sun, Moon, Sparkles } from 'lucide-react';
 
 export default function Navbar({ onLoadSampleLogs, isLoadingSample }) {
   const { theme, toggleTheme } = useTheme();
-  const { user, logout } = useAuth();
 
   return (
     <header className="h-16 border-b border-[#E8DFD8] dark:border-[#272C3D] bg-white/80 dark:bg-[#151821]/80 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30 transition-colors duration-200">
@@ -68,28 +66,6 @@ export default function Navbar({ onLoadSampleLogs, isLoadingSample }) {
             <Moon className="w-4 h-4 text-[#8C4A26]" />
           )}
         </button>
-
-        {/* User Badge / Logout */}
-        {user && (
-          <div className="flex items-center space-x-2 pl-2 border-l border-[#E8DFD8] dark:border-[#272C3D]">
-            <div className="flex items-center space-x-2 bg-[#FAF8F5] dark:bg-[#1C202C] px-2.5 py-1 rounded-lg border border-[#E8DFD8] dark:border-[#272C3D]">
-              <div className="w-5 h-5 rounded-full bg-[#8C4A26]/10 dark:bg-[#E07A5F]/20 flex items-center justify-center text-[#8C4A26] dark:text-[#E07A5F] font-bold text-[10px]">
-                {user.name ? user.name[0].toUpperCase() : 'U'}
-              </div>
-              <span className="text-xs font-medium text-[#2C1810] dark:text-[#F3EFEA] max-w-[100px] truncate">
-                {user.name || user.email}
-              </span>
-            </div>
-
-            <button
-              onClick={logout}
-              className="p-1.5 rounded-lg text-[#9C8980] hover:text-[#DC2626] dark:text-[#6B768E] dark:hover:text-[#F87171] hover:bg-red-50 dark:hover:bg-red-950/20 transition-colors"
-              title="Sign out"
-            >
-              <LogOut className="w-4 h-4" />
-            </button>
-          </div>
-        )}
       </div>
     </header>
   );
