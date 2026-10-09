@@ -1,7 +1,6 @@
 const API_BASE = '/api';
 
 export async function apiRequest(endpoint, options = {}) {
-  const token = localStorage.getItem('nobugs_token');
   const headers = {
     ...(options.headers || {}),
   };
@@ -9,10 +8,6 @@ export async function apiRequest(endpoint, options = {}) {
   // If not FormData, default to application/json
   if (!(options.body instanceof FormData) && !headers['Content-Type']) {
     headers['Content-Type'] = 'application/json';
-  }
-
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
   }
 
   const response = await fetch(`${API_BASE}${endpoint}`, {
