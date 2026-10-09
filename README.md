@@ -221,10 +221,10 @@ NoBugs was tested across pages, APIs, and viewports to hold up under real on-cal
 Built by the **NoBugs Team** for _<Navomesh>_.
 
 
-2392608131 Trideep Chakraborty
-2392608186 Rahul Sahu
-2392608006 Srijan Halder
-2392608110 Daksh Jain
+2392608131 Trideep Chakraborty <br>
+2392608186 Rahul Sahu <br>
+2392608006 Srijan Halder <br>
+2392608110 Daksh Jain <br>
 2392608223 Harshit Sharma
 
 <!-- Add team member names and links here -->
