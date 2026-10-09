@@ -11,7 +11,9 @@ from .database import get_db
 from .models import User
 
 # OAuth2 scheme
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.API_V1_PREFIX}/auth/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.API_V1_PREFIX}/auth/login", auto_error=False)
+
+DEFAULT_USER_EMAIL = "oncall@nobugs.io"
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     try:
@@ -36,23 +38,24 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     return encoded_jwt
 
 def get_current_user(
-    token: str = Depends(oauth2_scheme),
+    token: Optional[str] = Depends(oauth2_scheme),
     db: Session = Depends(get_db)
 ) -> User:
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-    try:
-        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-        email: str = payload.get("sub")
-        if email is None:
-            raise credentials_exception
-    except jwt.PyJWTError:
-        raise credentials_exception
+    """Login is disabled: a valid token is honoured if sent, otherwise the built-in demo user is used."""
+    if token:
+        try:
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+            user = db.query(User).filter(User.email == payload.get("sub")).first()
+            if user:
+                return user
+        except jwt.PyJWTError:
+            pass
 
-    user = db.query(User).filter(User.email == email).first()
+    user = db.query(User).filter(User.email == DEFAULT_USER_EMAIL).first()
     if user is None:
-        raise credentials_exception
+        user = User(name="3 AM Engineer", email=DEFAULT_USER_EMAIL,
+                    hashed_password=get_password_hash("oncall3am"))
+        db.add(user)
+        db.commit()
+        db.refresh(user)
     return user
