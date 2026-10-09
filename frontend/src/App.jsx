@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import AuthPage from './components/auth/AuthPage';
 import AppShell from './components/layout/AppShell';
 import LogIngestionSection from './components/ingestion/LogIngestionSection';
 import StatCards from './components/dashboard/StatCards';
@@ -15,7 +13,6 @@ import { api } from './api/client';
 import { ShieldAlert, Sparkles, Layers, Cpu, History, Database, ArrowRight } from 'lucide-react';
 
 function DashboardContent({ activeTab, setActiveTab }) {
-  const { user } = useAuth();
   const [session, setSession] = useState(null);
   const [incidents, setIncidents] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -197,37 +194,14 @@ function DashboardContent({ activeTab, setActiveTab }) {
 }
 
 function MainApp() {
-  const { user, loading } = useAuth();
   const [activeTab, setActiveTab] = useState('import');
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF8F5] dark:bg-[#0C0E12]">
-        <div className="text-center space-y-4">
-          <div className="w-16 h-16 rounded-2xl overflow-hidden bg-[#0C0E12] border border-[#E8DFD8] dark:border-[#383F54] shadow-xl shadow-[#8C4A26]/10 mx-auto animate-pulse">
-            <img src="/logo.png" alt="NoBugs Logo" className="w-full h-full object-cover" />
-          </div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#705D55] dark:text-[#A9B2C3]">
-            Initializing NoBugs Engine...
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return <AuthPage />;
-  }
-
   return <DashboardContent activeTab={activeTab} setActiveTab={setActiveTab} />;
 }
 
 export default function App() {
   return (
     <ThemeProvider>
-      <AuthProvider>
-        <MainApp />
-      </AuthProvider>
+      <MainApp />
     </ThemeProvider>
   );
 }
