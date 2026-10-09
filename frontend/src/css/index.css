@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode on .dark in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Segregated CSS Architecture */
+@import "./variables.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components.css";
+@import "./graph.css";

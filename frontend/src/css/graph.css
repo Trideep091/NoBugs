@@ -1,0 +1,48 @@
+/* NoBugs Graph & Data Visualization Styles (React Flow + Recharts) */
+
+.react-flow__node {
+  cursor: grab;
+}
+
+.react-flow__node:active {
+  cursor: grabbing;
+}
+
+.react-flow__controls {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.react-flow__controls-button {
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: var(--bg-card-subtle) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Edge animation enhancements */
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+/* Pulse animation for critical path */
+@keyframes critical-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.pulse-critical {
+  animation: critical-pulse 2s infinite ease-in-out;
+}

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoBugs | Automated On-Call Log Intelligence Platform</title>
+  <meta name="description" content="Turn 10,000 raw log lines into actionable incidents in under 60 seconds without hand-written rules.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  
+  <!-- Segregated CSS Architecture -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Standalone Authentication Screen (Login Page) -->
+  <div id="standalone-auth-screen" class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <img src="assets/logo.png" alt="NoBugs Official Logo">
+      </div>
+      <div class="auth-badge">
+        <span>⚡ 3 AM On-Call Intelligence</span>
+      </div>
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.35rem; color: var(--text-primary);">
+        Welcome back
+      </h2>
+      <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Turn 10,000 log lines into actionable incidents in seconds without regex rules.
+      </p>
+
+      <!-- 1-Click Demo Credentials Quick Fill -->
+      <button id="auth-fill-demo-btn" type="button" class="auth-demo-btn">
+        ⚡ Quick Fill 3 AM Demo Account (oncall@nobugs.io / oncall3am)
+      </button>
+
+      <form id="standalone-login-form">
+        <div class="auth-field">
+          <label>Email Address</label>
+          <input id="login-email" type="email" class="auth-input" placeholder="engineer@nobugs.io" value="oncall@nobugs.io" required>
+        </div>
+        <div class="auth-field">
+          <label>Password</label>
+          <input id="login-password" type="password" class="auth-input" placeholder="••••••••" value="oncall3am" required>
+        </div>
+        <button id="standalone-submit-login-btn" type="submit" class="btn-primary" style="width: 100%; padding: 0.75rem; font-size: 0.85rem; font-weight: 700; border-radius: 10px; margin-top: 0.5rem;">
+          Sign In to Incident Bridge &rarr;
+        </button>
+      </form>
+
+      <div style="margin-top: 1.25rem; font-size: 0.72rem; color: var(--text-muted);">
+        Demo environment seeded with 3 AM multi-service incident cascade.
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header class="header-bar">
+    <div class="brand-wrapper" onclick="document.querySelector('[data-tab=\'import\']').click()">
+      <div class="brand-logo">
+        <img src="assets/logo.png" alt="NoBugs Logo">
+      </div>
+      <div class="brand-text">
+        <h1>NoBugs <span class="brand-version">v1.0</span></h1>
+        <p class="brand-tagline">Find the signal in the noise.</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <div class="oncall-badge">
+        <span class="pulse-dot"></span>
+        <span id="oncall-user-label">3 AM Guard Active</span>
+      </div>
+
+      <button id="standalone-signout-btn" class="btn-secondary" style="font-size: 0.72rem; padding: 0.4rem 0.75rem;" title="Sign out to return to login page">
+        Sign Out
+      </button>
+
+      <button class="btn-primary btn-load-demo" title="Load realistic 10,000-line multi-service cascade failure scenario">
+        <span>⚡ Load 10k Demo Logs</span>
+      </button>
+
+      <button id="theme-toggle-btn" class="btn-icon" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+        🌓
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container Layout -->
+  <div class="app-layout">
+    
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-title">Intelligence Views</div>
+        <nav class="nav-group">
+          <button class="nav-item active" data-tab="import">
+            <span>📥</span>
+            <span>Home / Import</span>
+          </button>
+          <button class="nav-item" data-tab="dashboard">
+            <span>📊</span>
+            <span>Incident Dashboard</span>
+            <span id="incident-nav-badge" class="nav-badge">21</span>
+          </button>
+          <button class="nav-item" data-tab="graph">
+            <span>🕸️</span>
+            <span>Graph Analysis</span>
+          </button>
+          <button class="nav-item" data-tab="timemachine">
+            <span>⏳</span>
+            <span>Time Machine</span>
+          </button>
+          <button class="nav-item" data-tab="ledger">
+            <span>📖</span>
+            <span>Incident Ledger</span>
+          </button>
+          <button class="nav-item" data-tab="verify">
+            <span>✅</span>
+            <span>Fix Verification</span>
+          </button>
+        </nav>
+      </div>
+
+      <div style="font-size: 0.7rem; color: var(--text-muted); text-align: center; padding: 0.5rem;">
+        NoBugs Engine • Pure Vanilla Build
+      </div>
+    </aside>
+
+    <!-- Content Viewport -->
+    <main class="content-viewport">
+
+      <!-- ========================================== -->
+      <!-- TAB 1: HOME / IMPORT                      -->
+      <!-- ========================================== -->
+      <section id="tab-import" class="tab-pane active">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Log Stream Ingestion</h2>
+            <p>Drag & drop raw files or paste log windows to discover incident patterns without regexes.</p>
+          </div>
+        </div>
+
+        <!-- 10k Demo Incident Hero Banner -->
+        <div class="hero-ingest-card">
+          <div class="hero-text">
+            <span class="hero-badge">⚡ Interactive Scenario Ready</span>
+            <h3>10,000-Line Multi-Service Incident Story</h3>
+            <p>
+              Instantly ingest a realistic production failure cascade across 6 services (<code>api-gateway, checkout, payment, db, cache, auth</code>): slow pool acquisition &rarr; DB timeouts &rarr; payment circuit breaker &rarr; checkout 503s &rarr; customer order drop, with active red-herrings and sensitive token redaction.
+            </p>
+          </div>
+          <button class="btn-primary btn-load-demo" style="padding: 0.75rem 1.25rem;">
+            <span>Load 10,000 Sample Logs</span>
+          </button>
+        </div>
+
+        <!-- Dual Ingestion Grid -->
+        <div class="ingest-grid">
+          <!-- Section 1: Drag & Drop -->
+          <div class="ingest-box">
+            <h4>📁 Option 1: Drag &amp; Drop Log File</h4>
+            <div id="standalone-drop-zone" class="drop-zone">
+              <input type="file" id="file-upload-input" accept=".log,.txt,.json,.csv" style="display: none;">
+              <div id="drop-zone-icon" style="font-size: 2.2rem; margin-bottom: 0.5rem; transition: transform 0.2s;">📤</div>
+              <p id="drop-zone-text" style="font-size: 0.85rem; font-weight: 700;">Click to upload or drag log files here</p>
+              <p id="drop-zone-sub" style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem;">Supports .log, .txt, .json, .csv (up to 50,000 lines)</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span id="standalone-file-status" style="font-size: 0.72rem; color: var(--text-muted);">No file selected</span>
+              <button id="standalone-process-btn" class="btn-primary" disabled style="opacity: 0.5;">
+                Ingest Dropped File
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 2: Copy & Paste -->
+          <div class="ingest-box">
+            <h4>📋 Option 2: Copy &amp; Paste Log Content</h4>
+            <textarea id="paste-logs-input" class="log-textarea" placeholder="Paste raw log lines here..."></textarea>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span id="paste-line-counter" style="font-size: 0.7rem; color: var(--text-muted);">Awaiting logs</span>
+              <button id="paste-cluster-btn" class="btn-primary">
+                Cluster &amp; Analyze
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 2: INCIDENT DASHBOARD                 -->
+      <!-- ========================================== -->
+      <section id="tab-dashboard" class="tab-pane">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Incident Dashboard</h2>
+            <p id="dashboard-session-subtitle">Clustered and ranked templates extracted via Drain3 mining &amp; dynamic impact scoring.</p>
+          </div>
+          <button class="btn-secondary" onclick="document.querySelector('[data-tab=\'import\']').click()">
+            + Ingest New Logs
+          </button>
+        </div>
+
+        <!-- 4 Stat Cards -->
+        <div id="dashboard-stats" class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card-title">Total Logs Ingested</span>
+            <span id="stat-total-logs" class="stat-card-value">10,000</span>
+            <span id="stat-speed-sub" class="stat-card-sub">Processed in 0.27s</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-title">Incident Patterns Clustered</span>
+            <span id="stat-total-patterns" class="stat-card-value">21</span>
+            <span id="stat-patterns-sub" class="stat-card-sub">Mined via Drain3 Tree</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-title">Services Impacted</span>
+            <span id="stat-total-services" class="stat-card-value">7</span>
+            <span id="stat-services-sub" class="stat-card-sub">db, payment, checkout, api-gateway...</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-title">Scrubbed Secrets (Privacy Shield)</span>
+            <span id="stat-scrubbed-secrets" class="stat-card-value">3,887</span>
+            <span id="stat-secrets-sub" class="stat-card-sub">JWTs, credit cards &amp; API keys</span>
+          </div>
+        </div>
+
+        <!-- Incident List Table Card -->
+        <div class="table-card">
+          <div class="table-header">
+            <div>
+              <h3 style="font-size: 0.95rem; font-weight: 700;">Ranked Incident Patterns</h3>
+              <p style="font-size: 0.72rem; color: var(--text-secondary);">Sorted by composite impact score (severity &times; frequency &times; velocity)</p>
+            </div>
+            <input type="text" id="incident-search-input" class="filter-input" placeholder="Search templates or services...">
+          </div>
+
+          <div id="incident-list-container">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 3: GRAPH ANALYSIS                     -->
+      <!-- ========================================== -->
+      <section id="tab-graph" class="tab-pane">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Inferred Causality Topology &amp; Wavy Blast Radius</h2>
+            <p>Automated dependency tracing and wavy spline cascade waves mapping root cause to downstream outages.</p>
+          </div>
+          <button class="btn-secondary" onclick="alert('Toggled: Showing Confirmed Outages + Downstream Reachable Nodes')">
+            Toggle Predicted Blast Radius
+          </button>
+        </div>
+
+        <!-- WAVY TOPOLOGY NETWORK -->
+        <div class="topology-container">
+          <h4 style="font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem;">1. Multi-Service Wavy Inferred Failure Cascade</h4>
+          
+          <!-- SVG Network Visualization with Wavy Bezier Edges -->
+          <svg class="topology-svg" viewBox="0 0 800 240" style="background: var(--bg-card-subtle); border-radius: 12px;">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+              </marker>
+              <linearGradient id="waveEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#DC2626" />
+                <stop offset="50%" stop-color="#EA580C" />
+                <stop offset="100%" stop-color="#DC2626" />
+              </linearGradient>
+            </defs>
+
+            <!-- Wavy Bezier Inferred Connection Paths -->
+            <path d="M 140 120 C 190 60, 210 180, 260 120" stroke="url(#waveEdgeGrad)" stroke-width="3" fill="none" marker-end="url(#arrow)" stroke-dasharray="6 3"/>
+            <path d="M 360 120 C 410 60, 430 180, 480 120" stroke="url(#waveEdgeGrad)" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+            <path d="M 580 120 C 620 60, 640 180, 680 120" stroke="url(#waveEdgeGrad)" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- Node 1: DB (Root) -->
+            <rect x="40" y="85" width="100" height="70" rx="12" fill="var(--bg-card)" stroke="#DC2626" stroke-width="2.5"/>
+            <text x="90" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="var(--text-primary)">Database</text>
+            <text x="90" y="135" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">ROOT CAUSE (92%)</text>
+
+            <!-- Node 2: Payment -->
+            <rect x="260" y="85" width="100" height="70" rx="12" fill="var(--bg-card)" stroke="#DC2626" stroke-width="2.5"/>
+            <text x="310" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="var(--text-primary)">Payment</text>
+            <text x="310" y="135" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">Circuit Breaker</text>
+
+            <!-- Node 3: Checkout -->
+            <rect x="480" y="85" width="100" height="70" rx="12" fill="var(--bg-card)" stroke="#EA580C" stroke-width="2.5"/>
+            <text x="530" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="var(--text-primary)">Checkout</text>
+            <text x="530" y="135" text-anchor="middle" font-size="9" fill="#EA580C" font-weight="700">503 Outage</text>
+
+            <!-- Node 4: API Gateway -->
+            <rect x="680" y="85" width="100" height="70" rx="12" fill="var(--bg-card)" stroke="#EA580C" stroke-width="2.5"/>
+            <text x="730" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="var(--text-primary)">API Gateway</text>
+            <text x="730" y="135" text-anchor="middle" font-size="9" fill="#EA580C" font-weight="700">Ingress 5xx Spike</text>
+          </svg>
+        </div>
+
+        <!-- DUAL CHARTS SECTION: CASCADE VELOCITY AREA CHART + BLAST RADIUS BAR CHART -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.25rem; margin-top: 1.25rem;">
+          
+          <!-- CARD 2: CASCADE VELOCITY & ONSET PROPAGATION (AREA CHART) -->
+          <div class="topology-container" style="margin-top: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: #E07A5F; font-size: 1rem;">↗</span>
+                <h4 style="font-size: 0.85rem; font-weight: 700;">2. Cascade Velocity &amp; Onset Propagation (Errors/Min)</h4>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #E07A5F; font-weight: 700;">03:00 &rarr; 03:10</span>
+            </div>
+            <p style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">
+              Stacked service error rates demonstrate sequential onset: Cache miss (03:02) &rarr; DB Pool spike (03:03) &rarr; Payment circuit breaker (03:04) &rarr; Checkout 503 (03:05) &rarr; Ingress order collapse (03:06).
+            </p>
+
+            <svg viewBox="0 0 460 210" style="width: 100%; height: 210px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+              <defs>
+                <linearGradient id="areaDb" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stop-color="#8B5CF6" stop-opacity="0.85"/>
+                  <stop offset="95%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+                </linearGradient>
+                <linearGradient id="areaPay" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stop-color="#EF4444" stop-opacity="0.85"/>
+                  <stop offset="95%" stop-color="#EF4444" stop-opacity="0.15"/>
+                </linearGradient>
+                <linearGradient id="areaChk" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stop-color="#F97316" stop-opacity="0.85"/>
+                  <stop offset="95%" stop-color="#F97316" stop-opacity="0.15"/>
+                </linearGradient>
+                <linearGradient id="areaGw" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stop-color="#F43F5E" stop-opacity="0.85"/>
+                  <stop offset="95%" stop-color="#F43F5E" stop-opacity="0.15"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Dotted Horizontal Grid Lines -->
+              <line x1="38" y1="25" x2="445" y2="25" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="62" x2="445" y2="62" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="100" x2="445" y2="100" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="138" x2="445" y2="138" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="175" x2="445" y2="175" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+
+              <!-- Y-Axis Labels: 800, 600, 400, 200, 0 -->
+              <text x="32" y="28" font-size="9" fill="#9C8980" text-anchor="end">800</text>
+              <text x="32" y="65" font-size="9" fill="#9C8980" text-anchor="end">600</text>
+              <text x="32" y="103" font-size="9" fill="#9C8980" text-anchor="end">400</text>
+              <text x="32" y="141" font-size="9" fill="#9C8980" text-anchor="end">200</text>
+              <text x="32" y="178" font-size="9" fill="#9C8980" text-anchor="end">0</text>
+
+              <!-- Stacked Area Layers matching screenshot -->
+              <!-- 1. DB (Root) Layer - Purple -->
+              <path d="M 40 175 L 75 174 L 115 170 L 155 158 L 195 142 L 235 137 L 275 135 L 315 133 L 355 132 L 395 131 L 435 130 L 435 175 L 40 175 Z" fill="url(#areaDb)"/>
+
+              <!-- 2. Payment Layer - Red -->
+              <path d="M 40 175 L 75 174 L 115 168 L 155 148 L 195 110 L 235 95 L 275 90 L 315 88 L 355 86 L 395 85 L 435 84 L 435 130 L 395 131 L 355 132 L 315 133 L 275 135 L 235 137 L 195 142 L 155 158 L 115 170 L 75 174 L 40 175 Z" fill="url(#areaPay)"/>
+
+              <!-- 3. Checkout Layer - Orange -->
+              <path d="M 40 175 L 75 174 L 115 168 L 155 146 L 195 102 L 235 70 L 275 62 L 315 58 L 355 56 L 395 54 L 435 53 L 435 84 L 395 85 L 355 86 L 315 88 L 275 90 L 235 95 L 195 110 L 155 148 L 115 168 L 75 174 L 40 175 Z" fill="url(#areaChk)"/>
+
+              <!-- 4. API Gateway Layer - Pink/Coral -->
+              <path d="M 40 175 L 75 174 L 115 168 L 155 145 L 195 98 L 235 55 L 275 42 L 315 36 L 355 33 L 395 31 L 435 29 L 435 53 L 395 54 L 355 56 L 315 58 L 275 62 L 235 70 L 195 102 L 155 146 L 115 168 L 75 174 L 40 175 Z" fill="url(#areaGw)"/>
+
+              <!-- Top Contour Highlight (Cache / Total Surge) - Golden Yellow Line -->
+              <path d="M 40 175 L 75 172 C 115 160, 155 140, 195 94 C 235 52, 275 40, 315 35 C 355 32, 395 30, 435 28" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+
+              <!-- X-Axis Labels: 03:00 to 03:10 -->
+              <text x="40" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:00</text>
+              <text x="75" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:01</text>
+              <text x="115" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:02</text>
+              <text x="155" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:03</text>
+              <text x="195" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:04</text>
+              <text x="235" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:05</text>
+              <text x="275" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:06</text>
+              <text x="315" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:07</text>
+              <text x="355" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:08</text>
+              <text x="395" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:09</text>
+              <text x="435" y="195" font-size="8.5" fill="#9C8980" text-anchor="middle">03:10</text>
+            </svg>
+
+            <!-- Legend matching screenshot -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 0.75rem; font-size: 0.7rem; color: var(--text-secondary);">
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #F43F5E;"></span>
+                API Gateway
+              </span>
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></span>
+                Cache (Red Herring)
+              </span>
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #F97316;"></span>
+                Checkout
+              </span>
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #8B5CF6;"></span>
+                DB (Root)
+              </span>
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444;"></span>
+                Payment
+              </span>
+            </div>
+          </div>
+
+          <!-- CARD 3: BLAST RADIUS & SERVICE IMPACT DISTRIBUTION (BAR CHART) -->
+          <div class="topology-container" style="margin-top: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: #E07A5F; font-size: 1rem;">📊</span>
+                <h4 style="font-size: 0.85rem; font-weight: 700;">3. Blast Radius &amp; Service Impact Distribution</h4>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #E07A5F; font-weight: 700;">Volume by Service</span>
+            </div>
+            <p style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4;">
+              Compares observed error volume across confirmed services vs downstream reachable components (Inventory, Notifications) flagged as predicted exposure.
+            </p>
+
+            <svg viewBox="0 0 460 210" style="width: 100%; height: 210px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+              <!-- Dotted Horizontal Grid Lines: 1400, 1050, 700, 350, 0 -->
+              <line x1="38" y1="25" x2="445" y2="25" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="62" x2="445" y2="62" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="100" x2="445" y2="100" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="138" x2="445" y2="138" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="38" y1="175" x2="445" y2="175" stroke="#383F54" stroke-dasharray="3 3" opacity="0.4"/>
+
+              <!-- Y-Axis Labels -->
+              <text x="32" y="28" font-size="9" fill="#9C8980" text-anchor="end">1400</text>
+              <text x="32" y="65" font-size="9" fill="#9C8980" text-anchor="end">1050</text>
+              <text x="32" y="103" font-size="9" fill="#9C8980" text-anchor="end">700</text>
+              <text x="32" y="141" font-size="9" fill="#9C8980" text-anchor="end">350</text>
+              <text x="32" y="178" font-size="9" fill="#9C8980" text-anchor="end">0</text>
+
+              <!-- Columns for Services -->
+              <!-- db: 980 errors (h=105, y=70) -->
+              <rect x="52" y="70" width="34" height="105" rx="6" fill="#8B5CF6"/>
+              
+              <!-- payment: 1250 errors (h=134, y=41) -->
+              <rect x="100" y="41" width="34" height="134" rx="6" fill="#EF4444"/>
+
+              <!-- checkout: 840 errors (h=90, y=85) -->
+              <rect x="148" y="85" width="34" height="90" rx="6" fill="#F97316"/>
+
+              <!-- api-gateway: 920 errors (h=98, y=77) -->
+              <rect x="196" y="77" width="34" height="98" rx="6" fill="#F43F5E"/>
+
+              <!-- cache: 120 errors (h=14, y=161) -->
+              <rect x="244" y="161" width="34" height="14" rx="4" fill="#F59E0B"/>
+
+              <!-- auth: 15 errors (h=4, y=171) -->
+              <rect x="292" y="171" width="34" height="4" rx="2" fill="#B45309"/>
+
+              <!-- notifications: 0 -->
+              <line x1="340" y1="175" x2="374" y2="175" stroke="#4B5563" stroke-width="2"/>
+
+              <!-- inventory: 0 -->
+              <line x1="388" y1="175" x2="422" y2="175" stroke="#4B5563" stroke-width="2"/>
+
+              <!-- Rotated X-Axis Labels -->
+              <g transform="translate(69, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">db</text></g>
+              <g transform="translate(117, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">payment</text></g>
+              <g transform="translate(165, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">checkout</text></g>
+              <g transform="translate(213, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">api-gateway</text></g>
+              <g transform="translate(261, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">cache</text></g>
+              <g transform="translate(309, 185) rotate(-35)"><text x="0" y="0" font-size="8.5" fill="#9C8980" text-anchor="end">auth</text></g>
+              <g transform="translate(357, 185) rotate(-35)"><text x="0" y="0" font-size="8" fill="#6B7280" text-anchor="end">notifications</text></g>
+              <g transform="translate(405, 185) rotate(-35)"><text x="0" y="0" font-size="8" fill="#6B7280" text-anchor="end">inventory</text></g>
+            </svg>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 4: TIME MACHINE                       -->
+      <!-- ========================================== -->
+      <section id="tab-timemachine" class="tab-pane">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Incident Time Machine</h2>
+            <p>Chronological onset replay animation from healthy baseline to root collapse.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button id="tm-play-btn" class="btn-primary">Play</button>
+            <button id="tm-restart-btn" class="btn-secondary">Reset</button>
+            <button id="tm-speed-btn" class="btn-secondary">1x Speed</button>
+          </div>
+        </div>
+
+        <div class="timemachine-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Simulation Time</span>
+              <div id="tm-time-display" style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);">03:03:00</div>
+            </div>
+            <div class="badge badge-critical" style="font-size: 0.75rem;">CRITICAL ONSET</div>
+          </div>
+
+          <input type="range" id="tm-slider" min="0" max="600" value="180" class="slider-bar">
+          
+          <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono);">
+            <span>03:00:00 (Baseline)</span>
+            <span style="color: var(--brand-primary); font-weight: 700;">03:03:00 (Onset)</span>
+            <span>03:06:00 (Gateway 503)</span>
+            <span>03:10:00 (End)</span>
+          </div>
+
+          <!-- Real-time Service Health Grid -->
+          <div style="margin-top: 1rem;">
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">
+              Service Degradation State
+            </span>
+            <div class="services-health-grid">
+              <div class="health-box">
+                <div style="font-size: 0.75rem; font-weight: 700;">Database</div>
+                <div id="status-db" style="font-size: 0.7rem; font-weight: 700; color: #DC2626; margin-top: 0.25rem;">CRITICAL</div>
+              </div>
+              <div class="health-box">
+                <div style="font-size: 0.75rem; font-weight: 700;">Payment</div>
+                <div id="status-payment" style="font-size: 0.7rem; font-weight: 700; color: #DC2626; margin-top: 0.25rem;">CRITICAL</div>
+              </div>
+              <div class="health-box">
+                <div style="font-size: 0.75rem; font-weight: 700;">Checkout</div>
+                <div id="status-checkout" style="font-size: 0.7rem; font-weight: 700; color: #DC2626; margin-top: 0.25rem;">CRITICAL</div>
+              </div>
+              <div class="health-box">
+                <div style="font-size: 0.75rem; font-weight: 700;">API Gateway</div>
+                <div id="status-gateway" style="font-size: 0.7rem; font-weight: 700; color: #DC2626; margin-top: 0.25rem;">CRITICAL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 5: INCIDENT LEDGER                    -->
+      <!-- ========================================== -->
+      <section id="tab-ledger" class="tab-pane">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Incident Ledger &amp; Knowledge Base</h2>
+            <p>Institutional memory linking current telemetry to past verified engineering fixes.</p>
+          </div>
+          <button class="btn-primary" onclick="alert('Postmortem entry saved to local database!')">
+            + New Postmortem
+          </button>
+        </div>
+
+        <div class="table-card">
+          <div class="table-header">
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Recorded Postmortems</h3>
+            <input type="text" class="filter-input" placeholder="Search postmortems...">
+          </div>
+
+          <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--bg-card-subtle);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <h4 style="font-size: 0.85rem; font-weight: 700;">#1 &bull; PostgreSQL Connection Pool Saturation (Stripe Webhook Surge)</h4>
+                <span class="badge" style="background: #D1FAE5; color: #065F46;">Resolved</span>
+              </div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                <strong>Root Cause:</strong> Connection pool lease times exceeded 5000ms max acquisition timeout under 200 req/sec peak.
+              </p>
+              <p style="font-size: 0.75rem; color: #10B981; font-weight: 600;">
+                <strong>Verified Fix:</strong> Scaled max_connections to 100 and introduced PgBouncer connection multiplexing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 6: FIX VERIFICATION                   -->
+      <!-- ========================================== -->
+      <section id="tab-verify" class="tab-pane">
+        <div class="view-header">
+          <div class="view-header-titles">
+            <h2>Post-Fix Log Verification</h2>
+            <p>Upload or paste post-patch logs to mathematically confirm error pattern elimination.</p>
+          </div>
+          <button id="btn-verify-demo" class="btn-primary">
+            Load &amp; Verify Post-Fix Logs (1-Click)
+          </button>
+        </div>
+
+        <div id="verify-results" style="display: none;">
+          <!-- Verdict Banner -->
+          <div style="background: var(--bg-card); border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="badge" style="background: #D1FAE5; color: #065F46; font-size: 0.8rem; margin-bottom: 0.5rem;">RESOLVED</span>
+              <h3 style="font-size: 1.1rem; font-weight: 800;">Fix Successfully Verified</h3>
+              <p style="font-size: 0.75rem; color: var(--text-secondary);">All 7 critical cascade failure templates eliminated in post-patch window.</p>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 2.2rem; font-weight: 800; color: #10B981; font-family: var(--font-mono);">-92.0%</span>
+              <span style="display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Error Volume Reduction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-header">
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Template Comparison Breakdown</h3>
+          </div>
+          <div style="padding: 1rem 1.5rem; font-size: 0.75rem; color: var(--text-secondary);">
+            Click <strong>"Load &amp; Verify Post-Fix Logs (1-Click)"</strong> above to evaluate the post-patch window.
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Incident Detail Modal (Claude AI Investigation) -->
+  <div id="incident-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span id="modal-incident-priority" class="badge badge-critical">Critical Incident</span>
+          <h3 id="modal-incident-title" style="font-size: 1rem; font-weight: 700; font-family: var(--font-mono); margin-top: 0.4rem;">Template</h3>
+        </div>
+        <button id="modal-close-btn" class="btn-icon">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- AI Diagnosis Card -->
+        <div style="background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.72rem; font-weight: 700; color: var(--brand-primary); text-transform: uppercase;">✨ Claude AI SRE Investigation</span>
+            <span id="modal-incident-onset" style="font-size: 0.7rem; color: var(--text-muted);">Onset: 03:03:00</span>
+          </div>
+          <p id="modal-incident-desc" style="font-size: 0.8rem; line-height: 1.5;">
+            PostgreSQL connection pool exhaustion on <code>postgres-primary-01</code> starved downstream worker threads. Payment RPC calls timed out waiting for database leases, leading to circuit breaker trip and subsequent checkout HTTP 503 errors.
+          </p>
+        </div>
+
+        <!-- 3 Competing Hypotheses -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <h4 style="font-size: 0.85rem; font-weight: 700;">3 Competing Root-Cause Hypotheses</h4>
+            <button id="modal-challenge-btn" class="btn-secondary" style="font-size: 0.7rem;">
+              🔄 Challenge This Theory
+            </button>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="padding: 0.9rem; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-card);">
+              <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.78rem;">
+                <span>1. Database Connection Pool Starvation</span>
+                <span style="color: var(--brand-primary);">92% Probability</span>
+              </div>
+              <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.35rem;">
+                Supporting evidence: 475 timeouts preceded by 3420ms acquisition latency spikes.
+              </p>
+            </div>
+
+            <div style="padding: 0.9rem; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-card);">
+              <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.78rem;">
+                <span>2. Stripe Payment Gateway Provider Outage</span>
+                <span style="color: var(--text-muted);">6% Probability</span>
+              </div>
+              <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.35rem;">
+                Contrary evidence: Ping health checks to Stripe API returned 200 OK throughout window.
+              </p>
+            </div>
+
+            <div style="padding: 0.9rem; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-card);">
+              <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.78rem;">
+                <span>3. Redis Cache Eviction Storm (Red Herring)</span>
+                <span style="color: var(--text-muted);">2% Probability</span>
+              </div>
+              <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.35rem;">
+                Contrary evidence: Cache miss spike decayed before database pool errors initiated.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagnostic Test Command -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 0.9rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--brand-primary);">Distinguishing Diagnostic Check</span>
+          <pre style="margin-top: 0.4rem; font-size: 0.72rem; background: var(--bg-input); padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color);">SELECT count(*), state FROM pg_stat_activity WHERE datname='production' GROUP BY state;</pre>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="alert('Navigating to Incident Ledger to record resolution...'); document.getElementById('incident-modal').classList.remove('open'); document.querySelector('[data-tab=\'ledger\']').click();">
+          Record Fix in Ledger
+        </button>
+        <button class="btn-primary" onclick="document.getElementById('incident-modal').classList.remove('open')">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,800 @@
+2026-10-10 03:20:00 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=86ms status=200
+2026-10-10 03:20:00 INFO [checkout] Cart checkout completed status=200 for cart_26349 total_items=5
+2026-10-10 03:20:01 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=68ms status=200
+2026-10-10 03:20:01 INFO [auth] Token verified for user_5295
+2026-10-10 03:20:02 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=26/50
+2026-10-10 03:20:02 INFO [cache] Cache hit key session_4019 latency=1ms
+2026-10-10 03:20:03 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=12/50
+2026-10-10 03:20:03 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=25/50
+2026-10-10 03:20:04 INFO [payment] Transaction processed successfully for tx_868717 latency=42ms
+2026-10-10 03:20:04 INFO [payment] Transaction processed successfully for tx_391187 latency=56ms
+2026-10-10 03:20:05 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=84ms status=200
+2026-10-10 03:20:05 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=20/50
+2026-10-10 03:20:06 INFO [payment] Transaction processed successfully for tx_738657 latency=44ms
+2026-10-10 03:20:06 INFO [checkout] Cart checkout completed status=200 for cart_19088 total_items=1
+2026-10-10 03:20:07 INFO [payment] Transaction processed successfully for tx_198730 latency=35ms
+2026-10-10 03:20:07 INFO [payment] Transaction processed successfully for tx_394330 latency=45ms
+2026-10-10 03:20:08 INFO [payment] Transaction processed successfully for tx_864005 latency=52ms
+2026-10-10 03:20:08 INFO [payment] Transaction processed successfully for tx_410513 latency=37ms
+2026-10-10 03:20:09 INFO [payment] Transaction processed successfully for tx_919901 latency=59ms
+2026-10-10 03:20:09 INFO [cache] Cache hit key session_3124 latency=4ms
+2026-10-10 03:20:10 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=16/50
+2026-10-10 03:20:10 INFO [checkout] Cart checkout completed status=200 for cart_99845 total_items=4
+2026-10-10 03:20:11 INFO [payment] Transaction processed successfully for tx_332669 latency=60ms
+2026-10-10 03:20:11 INFO [checkout] Cart checkout completed status=200 for cart_26413 total_items=3
+2026-10-10 03:20:12 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=20/50
+2026-10-10 03:20:12 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=47ms status=200
+2026-10-10 03:20:13 INFO [cache] Cache hit key session_1433 latency=3ms
+2026-10-10 03:20:13 INFO [auth] Token verified for user_7765
+2026-10-10 03:20:14 INFO [payment] Transaction processed successfully for tx_938035 latency=48ms
+2026-10-10 03:20:14 INFO [cache] Cache hit key session_4907 latency=4ms
+2026-10-10 03:20:15 INFO [cache] Cache hit key session_2756 latency=3ms
+2026-10-10 03:20:15 INFO [checkout] Cart checkout completed status=200 for cart_34576 total_items=4
+2026-10-10 03:20:16 INFO [cache] Cache hit key session_4670 latency=3ms
+2026-10-10 03:20:16 INFO [cache] Cache hit key session_8638 latency=2ms
+2026-10-10 03:20:17 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=74ms status=200
+2026-10-10 03:20:17 INFO [cache] Cache hit key session_8757 latency=4ms
+2026-10-10 03:20:18 INFO [payment] Transaction processed successfully for tx_684804 latency=43ms
+2026-10-10 03:20:18 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=89ms status=200
+2026-10-10 03:20:19 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=20/50
+2026-10-10 03:20:19 INFO [auth] Token verified for user_4983
+2026-10-10 03:20:20 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=22/50
+2026-10-10 03:20:20 INFO [payment] Transaction processed successfully for tx_345254 latency=51ms
+2026-10-10 03:20:21 INFO [payment] Transaction processed successfully for tx_762778 latency=46ms
+2026-10-10 03:20:21 INFO [payment] Transaction processed successfully for tx_782097 latency=52ms
+2026-10-10 03:20:22 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=24/50
+2026-10-10 03:20:22 INFO [checkout] Cart checkout completed status=200 for cart_90466 total_items=2
+2026-10-10 03:20:23 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=27/50
+2026-10-10 03:20:23 INFO [cache] Cache hit key session_2754 latency=1ms
+2026-10-10 03:20:24 INFO [auth] Token verified for user_5474
+2026-10-10 03:20:24 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=14/50
+2026-10-10 03:20:25 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=19/50
+2026-10-10 03:20:25 INFO [auth] Token verified for user_7927
+2026-10-10 03:20:26 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=20/50
+2026-10-10 03:20:26 INFO [cache] Cache hit key session_3762 latency=3ms
+2026-10-10 03:20:27 INFO [cache] Cache hit key session_1792 latency=3ms
+2026-10-10 03:20:27 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=73ms status=200
+2026-10-10 03:20:28 INFO [auth] Token verified for user_1969
+2026-10-10 03:20:28 INFO [payment] Transaction processed successfully for tx_144385 latency=43ms
+2026-10-10 03:20:29 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=22/50
+2026-10-10 03:20:29 INFO [checkout] Cart checkout completed status=200 for cart_14457 total_items=5
+2026-10-10 03:20:30 INFO [checkout] Cart checkout completed status=200 for cart_61074 total_items=5
+2026-10-10 03:20:30 INFO [payment] Transaction processed successfully for tx_565310 latency=57ms
+2026-10-10 03:20:31 INFO [checkout] Cart checkout completed status=200 for cart_18317 total_items=2
+2026-10-10 03:20:31 INFO [cache] Cache hit key session_5875 latency=1ms
+2026-10-10 03:20:32 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=64ms status=200
+2026-10-10 03:20:32 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:20:33 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=12/50
+2026-10-10 03:20:33 INFO [checkout] Cart checkout completed status=200 for cart_45763 total_items=4
+2026-10-10 03:20:34 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=57ms status=200
+2026-10-10 03:20:34 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:20:35 INFO [payment] Transaction processed successfully for tx_114025 latency=57ms
+2026-10-10 03:20:35 INFO [payment] Transaction processed successfully for tx_361116 latency=59ms
+2026-10-10 03:20:36 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=65ms status=200
+2026-10-10 03:20:36 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:20:37 INFO [auth] Token verified for user_2065
+2026-10-10 03:20:37 INFO [auth] Token verified for user_3815
+2026-10-10 03:20:38 INFO [payment] Transaction processed successfully for tx_587352 latency=47ms
+2026-10-10 03:20:38 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=14/50
+2026-10-10 03:20:39 INFO [auth] Token verified for user_7252
+2026-10-10 03:20:39 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=21/50
+2026-10-10 03:20:40 INFO [checkout] Cart checkout completed status=200 for cart_72969 total_items=3
+2026-10-10 03:20:40 INFO [payment] Transaction processed successfully for tx_194456 latency=50ms
+2026-10-10 03:20:41 INFO [checkout] Cart checkout completed status=200 for cart_90800 total_items=5
+2026-10-10 03:20:41 INFO [cache] Cache hit key session_1995 latency=4ms
+2026-10-10 03:20:42 INFO [cache] Cache hit key session_3441 latency=1ms
+2026-10-10 03:20:42 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=62ms status=200
+2026-10-10 03:20:43 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=56ms status=200
+2026-10-10 03:20:43 INFO [cache] Cache hit key session_4268 latency=4ms
+2026-10-10 03:20:44 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=51ms status=200
+2026-10-10 03:20:44 INFO [payment] Transaction processed successfully for tx_676275 latency=48ms
+2026-10-10 03:20:45 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=16/50
+2026-10-10 03:20:45 INFO [checkout] Cart checkout completed status=200 for cart_67246 total_items=5
+2026-10-10 03:20:46 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=13/50
+2026-10-10 03:20:46 INFO [payment] Transaction processed successfully for tx_193219 latency=44ms
+2026-10-10 03:20:47 INFO [checkout] Cart checkout completed status=200 for cart_14323 total_items=5
+2026-10-10 03:20:47 INFO [auth] Token verified for user_8168
+2026-10-10 03:20:48 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=12/50
+2026-10-10 03:20:48 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=26/50
+2026-10-10 03:20:49 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=81ms status=200
+2026-10-10 03:20:49 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=18/50
+2026-10-10 03:20:50 INFO [auth] Token verified for user_5023
+2026-10-10 03:20:50 INFO [checkout] Cart checkout completed status=200 for cart_95789 total_items=1
+2026-10-10 03:20:51 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=22/50
+2026-10-10 03:20:51 INFO [auth] Token verified for user_6434
+2026-10-10 03:20:52 INFO [auth] Token verified for user_3348
+2026-10-10 03:20:52 INFO [auth] Token verified for user_9701
+2026-10-10 03:20:53 INFO [auth] Token verified for user_8548
+2026-10-10 03:20:53 INFO [checkout] Cart checkout completed status=200 for cart_79350 total_items=3
+2026-10-10 03:20:54 INFO [checkout] Cart checkout completed status=200 for cart_64152 total_items=3
+2026-10-10 03:20:54 INFO [checkout] Cart checkout completed status=200 for cart_78673 total_items=3
+2026-10-10 03:20:55 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:20:55 INFO [payment] Transaction processed successfully for tx_801444 latency=46ms
+2026-10-10 03:20:56 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=89ms status=200
+2026-10-10 03:20:56 INFO [auth] Token verified for user_5416
+2026-10-10 03:20:57 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=14/50
+2026-10-10 03:20:57 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=26/50
+2026-10-10 03:20:58 INFO [auth] Token verified for user_6968
+2026-10-10 03:20:58 INFO [auth] Token verified for user_8127
+2026-10-10 03:20:59 INFO [checkout] Cart checkout completed status=200 for cart_33999 total_items=4
+2026-10-10 03:20:59 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=76ms status=200
+2026-10-10 03:21:00 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=16/50
+2026-10-10 03:21:00 INFO [auth] Token verified for user_2797
+2026-10-10 03:21:01 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=20/50
+2026-10-10 03:21:01 INFO [cache] Cache hit key session_1252 latency=2ms
+2026-10-10 03:21:02 INFO [cache] Cache hit key session_7739 latency=4ms
+2026-10-10 03:21:02 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=69ms status=200
+2026-10-10 03:21:03 INFO [payment] Transaction processed successfully for tx_418567 latency=37ms
+2026-10-10 03:21:03 INFO [payment] Transaction processed successfully for tx_781032 latency=52ms
+2026-10-10 03:21:04 INFO [auth] Token verified for user_4654
+2026-10-10 03:21:04 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:21:05 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=22/50
+2026-10-10 03:21:05 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=26/50
+2026-10-10 03:21:06 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=28/50
+2026-10-10 03:21:06 INFO [auth] Token verified for user_1961
+2026-10-10 03:21:07 INFO [cache] Cache hit key session_7418 latency=2ms
+2026-10-10 03:21:07 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=88ms status=200
+2026-10-10 03:21:08 INFO [cache] Cache hit key session_2833 latency=4ms
+2026-10-10 03:21:08 INFO [auth] Token verified for user_3409
+2026-10-10 03:21:09 INFO [payment] Transaction processed successfully for tx_880261 latency=47ms
+2026-10-10 03:21:09 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=13/50
+2026-10-10 03:21:10 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=14/50
+2026-10-10 03:21:10 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=17/50
+2026-10-10 03:21:11 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=24/50
+2026-10-10 03:21:11 INFO [checkout] Cart checkout completed status=200 for cart_84442 total_items=5
+2026-10-10 03:21:12 INFO [cache] Cache hit key session_8803 latency=3ms
+2026-10-10 03:21:12 INFO [payment] Transaction processed successfully for tx_628586 latency=48ms
+2026-10-10 03:21:13 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=89ms status=200
+2026-10-10 03:21:13 INFO [checkout] Cart checkout completed status=200 for cart_10679 total_items=4
+2026-10-10 03:21:14 INFO [auth] Token verified for user_5472
+2026-10-10 03:21:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=56ms status=200
+2026-10-10 03:21:15 INFO [cache] Cache hit key session_5508 latency=3ms
+2026-10-10 03:21:15 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=85ms status=200
+2026-10-10 03:21:16 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=21/50
+2026-10-10 03:21:16 INFO [payment] Transaction processed successfully for tx_244890 latency=42ms
+2026-10-10 03:21:17 INFO [auth] Token verified for user_3813
+2026-10-10 03:21:17 INFO [checkout] Cart checkout completed status=200 for cart_42820 total_items=2
+2026-10-10 03:21:18 INFO [cache] Cache hit key session_1966 latency=3ms
+2026-10-10 03:21:18 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=14/50
+2026-10-10 03:21:19 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=22/50
+2026-10-10 03:21:19 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=15/50
+2026-10-10 03:21:20 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=65ms status=200
+2026-10-10 03:21:20 INFO [cache] Cache hit key session_9618 latency=4ms
+2026-10-10 03:21:21 INFO [cache] Cache hit key session_1536 latency=4ms
+2026-10-10 03:21:21 INFO [auth] Token verified for user_9740
+2026-10-10 03:21:22 INFO [cache] Cache hit key session_1352 latency=3ms
+2026-10-10 03:21:22 INFO [checkout] Cart checkout completed status=200 for cart_16615 total_items=4
+2026-10-10 03:21:23 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=53ms status=200
+2026-10-10 03:21:23 INFO [payment] Transaction processed successfully for tx_516241 latency=46ms
+2026-10-10 03:21:24 INFO [checkout] Cart checkout completed status=200 for cart_76148 total_items=3
+2026-10-10 03:21:24 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:21:25 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=45ms status=200
+2026-10-10 03:21:25 INFO [auth] Token verified for user_3300
+2026-10-10 03:21:26 INFO [checkout] Cart checkout completed status=200 for cart_88648 total_items=3
+2026-10-10 03:21:26 INFO [payment] Transaction processed successfully for tx_825307 latency=38ms
+2026-10-10 03:21:27 INFO [cache] Cache hit key session_1169 latency=3ms
+2026-10-10 03:21:27 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=24/50
+2026-10-10 03:21:28 INFO [checkout] Cart checkout completed status=200 for cart_35253 total_items=2
+2026-10-10 03:21:28 INFO [checkout] Cart checkout completed status=200 for cart_78102 total_items=1
+2026-10-10 03:21:29 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=25/50
+2026-10-10 03:21:29 INFO [auth] Token verified for user_6825
+2026-10-10 03:21:30 INFO [checkout] Cart checkout completed status=200 for cart_56117 total_items=4
+2026-10-10 03:21:30 INFO [auth] Token verified for user_6316
+2026-10-10 03:21:31 INFO [payment] Transaction processed successfully for tx_492301 latency=60ms
+2026-10-10 03:21:31 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=76ms status=200
+2026-10-10 03:21:32 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=20/50
+2026-10-10 03:21:32 INFO [auth] Token verified for user_5195
+2026-10-10 03:21:33 INFO [checkout] Cart checkout completed status=200 for cart_87373 total_items=5
+2026-10-10 03:21:33 INFO [auth] Token verified for user_6425
+2026-10-10 03:21:34 INFO [checkout] Cart checkout completed status=200 for cart_98871 total_items=4
+2026-10-10 03:21:34 INFO [auth] Token verified for user_2477
+2026-10-10 03:21:35 INFO [checkout] Cart checkout completed status=200 for cart_85536 total_items=4
+2026-10-10 03:21:35 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=20/50
+2026-10-10 03:21:36 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=69ms status=200
+2026-10-10 03:21:36 INFO [payment] Transaction processed successfully for tx_705706 latency=54ms
+2026-10-10 03:21:37 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=27/50
+2026-10-10 03:21:37 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=53ms status=200
+2026-10-10 03:21:38 INFO [checkout] Cart checkout completed status=200 for cart_33584 total_items=1
+2026-10-10 03:21:38 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=19/50
+2026-10-10 03:21:39 INFO [auth] Token verified for user_8503
+2026-10-10 03:21:39 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=22/50
+2026-10-10 03:21:40 INFO [payment] Transaction processed successfully for tx_250723 latency=56ms
+2026-10-10 03:21:40 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=12/50
+2026-10-10 03:21:41 INFO [auth] Token verified for user_3612
+2026-10-10 03:21:41 INFO [payment] Transaction processed successfully for tx_432140 latency=43ms
+2026-10-10 03:21:42 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=25/50
+2026-10-10 03:21:42 INFO [auth] Token verified for user_2518
+2026-10-10 03:21:43 INFO [checkout] Cart checkout completed status=200 for cart_67006 total_items=5
+2026-10-10 03:21:43 INFO [checkout] Cart checkout completed status=200 for cart_27711 total_items=5
+2026-10-10 03:21:44 INFO [checkout] Cart checkout completed status=200 for cart_99604 total_items=1
+2026-10-10 03:21:44 INFO [payment] Transaction processed successfully for tx_482981 latency=35ms
+2026-10-10 03:21:45 INFO [checkout] Cart checkout completed status=200 for cart_13551 total_items=4
+2026-10-10 03:21:45 INFO [cache] Cache hit key session_5699 latency=1ms
+2026-10-10 03:21:46 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=24/50
+2026-10-10 03:21:46 INFO [checkout] Cart checkout completed status=200 for cart_24604 total_items=5
+2026-10-10 03:21:47 INFO [cache] Cache hit key session_7042 latency=4ms
+2026-10-10 03:21:47 INFO [cache] Cache hit key session_7647 latency=2ms
+2026-10-10 03:21:48 INFO [cache] Cache hit key session_3750 latency=2ms
+2026-10-10 03:21:48 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=57ms status=200
+2026-10-10 03:21:49 INFO [checkout] Cart checkout completed status=200 for cart_95575 total_items=4
+2026-10-10 03:21:49 INFO [cache] Cache hit key session_3345 latency=1ms
+2026-10-10 03:21:50 INFO [checkout] Cart checkout completed status=200 for cart_68173 total_items=3
+2026-10-10 03:21:50 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=26/50
+2026-10-10 03:21:51 INFO [auth] Token verified for user_8328
+2026-10-10 03:21:51 INFO [payment] Transaction processed successfully for tx_158109 latency=53ms
+2026-10-10 03:21:52 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=21/50
+2026-10-10 03:21:52 INFO [cache] Cache hit key session_1447 latency=4ms
+2026-10-10 03:21:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=63ms status=200
+2026-10-10 03:21:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:21:54 INFO [checkout] Cart checkout completed status=200 for cart_66349 total_items=2
+2026-10-10 03:21:54 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:21:55 INFO [auth] Token verified for user_8434
+2026-10-10 03:21:55 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=16/50
+2026-10-10 03:21:56 INFO [auth] Token verified for user_2864
+2026-10-10 03:21:56 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=20/50
+2026-10-10 03:21:57 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=52ms status=200
+2026-10-10 03:21:57 INFO [checkout] Cart checkout completed status=200 for cart_25690 total_items=5
+2026-10-10 03:21:58 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=86ms status=200
+2026-10-10 03:21:58 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=63ms status=200
+2026-10-10 03:21:59 INFO [payment] Transaction processed successfully for tx_872565 latency=57ms
+2026-10-10 03:21:59 INFO [cache] Cache hit key session_9209 latency=4ms
+2026-10-10 03:22:00 INFO [cache] Cache hit key session_7809 latency=3ms
+2026-10-10 03:22:00 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=12/50
+2026-10-10 03:22:01 INFO [checkout] Cart checkout completed status=200 for cart_14325 total_items=3
+2026-10-10 03:22:01 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=17/50
+2026-10-10 03:22:02 INFO [cache] Cache hit key session_1347 latency=2ms
+2026-10-10 03:22:02 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=24/50
+2026-10-10 03:22:03 INFO [cache] Cache hit key session_5292 latency=1ms
+2026-10-10 03:22:03 INFO [cache] Cache hit key session_1636 latency=2ms
+2026-10-10 03:22:04 INFO [auth] Token verified for user_1054
+2026-10-10 03:22:04 INFO [checkout] Cart checkout completed status=200 for cart_67809 total_items=3
+2026-10-10 03:22:05 INFO [payment] Transaction processed successfully for tx_907932 latency=44ms
+2026-10-10 03:22:05 INFO [checkout] Cart checkout completed status=200 for cart_21286 total_items=3
+2026-10-10 03:22:06 INFO [checkout] Cart checkout completed status=200 for cart_24978 total_items=1
+2026-10-10 03:22:06 INFO [cache] Cache hit key session_5176 latency=3ms
+2026-10-10 03:22:07 INFO [checkout] Cart checkout completed status=200 for cart_33880 total_items=4
+2026-10-10 03:22:07 INFO [checkout] Cart checkout completed status=200 for cart_84992 total_items=4
+2026-10-10 03:22:08 INFO [cache] Cache hit key session_3260 latency=2ms
+2026-10-10 03:22:08 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=25/50
+2026-10-10 03:22:09 INFO [auth] Token verified for user_1644
+2026-10-10 03:22:09 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=90ms status=200
+2026-10-10 03:22:10 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=18/50
+2026-10-10 03:22:10 INFO [auth] Token verified for user_4697
+2026-10-10 03:22:11 INFO [auth] Token verified for user_8239
+2026-10-10 03:22:11 INFO [cache] Cache hit key session_1061 latency=4ms
+2026-10-10 03:22:12 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=77ms status=200
+2026-10-10 03:22:12 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=60ms status=200
+2026-10-10 03:22:13 INFO [payment] Transaction processed successfully for tx_903166 latency=50ms
+2026-10-10 03:22:13 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=26/50
+2026-10-10 03:22:14 INFO [payment] Transaction processed successfully for tx_726256 latency=56ms
+2026-10-10 03:22:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=52ms status=200
+2026-10-10 03:22:15 INFO [checkout] Cart checkout completed status=200 for cart_48381 total_items=1
+2026-10-10 03:22:15 INFO [auth] Token verified for user_2999
+2026-10-10 03:22:16 INFO [auth] Token verified for user_7307
+2026-10-10 03:22:16 INFO [auth] Token verified for user_9573
+2026-10-10 03:22:17 INFO [cache] Cache hit key session_6010 latency=4ms
+2026-10-10 03:22:17 INFO [checkout] Cart checkout completed status=200 for cart_55556 total_items=3
+2026-10-10 03:22:18 INFO [checkout] Cart checkout completed status=200 for cart_48614 total_items=1
+2026-10-10 03:22:18 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=90ms status=200
+2026-10-10 03:22:19 INFO [checkout] Cart checkout completed status=200 for cart_19873 total_items=4
+2026-10-10 03:22:19 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=13/50
+2026-10-10 03:22:20 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=24/50
+2026-10-10 03:22:20 INFO [auth] Token verified for user_6996
+2026-10-10 03:22:21 INFO [checkout] Cart checkout completed status=200 for cart_74132 total_items=3
+2026-10-10 03:22:21 INFO [cache] Cache hit key session_8299 latency=4ms
+2026-10-10 03:22:22 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=27/50
+2026-10-10 03:22:22 INFO [auth] Token verified for user_8619
+2026-10-10 03:22:23 INFO [cache] Cache hit key session_6785 latency=3ms
+2026-10-10 03:22:23 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=19/50
+2026-10-10 03:22:24 INFO [checkout] Cart checkout completed status=200 for cart_41194 total_items=1
+2026-10-10 03:22:24 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=20/50
+2026-10-10 03:22:25 INFO [checkout] Cart checkout completed status=200 for cart_33598 total_items=3
+2026-10-10 03:22:25 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=27/50
+2026-10-10 03:22:26 INFO [payment] Transaction processed successfully for tx_128196 latency=46ms
+2026-10-10 03:22:26 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=64ms status=200
+2026-10-10 03:22:27 INFO [auth] Token verified for user_6680
+2026-10-10 03:22:27 INFO [cache] Cache hit key session_8495 latency=3ms
+2026-10-10 03:22:28 INFO [auth] Token verified for user_4723
+2026-10-10 03:22:28 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=51ms status=200
+2026-10-10 03:22:29 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=66ms status=200
+2026-10-10 03:22:29 INFO [auth] Token verified for user_8702
+2026-10-10 03:22:30 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=23/50
+2026-10-10 03:22:30 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=27/50
+2026-10-10 03:22:31 INFO [payment] Transaction processed successfully for tx_849154 latency=39ms
+2026-10-10 03:22:31 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=72ms status=200
+2026-10-10 03:22:32 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=19/50
+2026-10-10 03:22:32 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=74ms status=200
+2026-10-10 03:22:33 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:22:33 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=17/50
+2026-10-10 03:22:34 INFO [auth] Token verified for user_3632
+2026-10-10 03:22:34 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:22:35 INFO [payment] Transaction processed successfully for tx_502407 latency=47ms
+2026-10-10 03:22:35 INFO [payment] Transaction processed successfully for tx_679570 latency=36ms
+2026-10-10 03:22:36 INFO [checkout] Cart checkout completed status=200 for cart_88023 total_items=5
+2026-10-10 03:22:36 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=87ms status=200
+2026-10-10 03:22:37 INFO [cache] Cache hit key session_1383 latency=4ms
+2026-10-10 03:22:37 INFO [checkout] Cart checkout completed status=200 for cart_50685 total_items=3
+2026-10-10 03:22:38 INFO [payment] Transaction processed successfully for tx_118138 latency=43ms
+2026-10-10 03:22:38 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=19/50
+2026-10-10 03:22:39 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=59ms status=200
+2026-10-10 03:22:39 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:22:40 INFO [payment] Transaction processed successfully for tx_929019 latency=55ms
+2026-10-10 03:22:40 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=28/50
+2026-10-10 03:22:41 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=18/50
+2026-10-10 03:22:41 INFO [payment] Transaction processed successfully for tx_294634 latency=37ms
+2026-10-10 03:22:42 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=76ms status=200
+2026-10-10 03:22:42 INFO [cache] Cache hit key session_2040 latency=1ms
+2026-10-10 03:22:43 INFO [checkout] Cart checkout completed status=200 for cart_82929 total_items=5
+2026-10-10 03:22:43 INFO [checkout] Cart checkout completed status=200 for cart_14718 total_items=5
+2026-10-10 03:22:44 INFO [payment] Transaction processed successfully for tx_941487 latency=45ms
+2026-10-10 03:22:44 INFO [cache] Cache hit key session_1935 latency=4ms
+2026-10-10 03:22:45 INFO [checkout] Cart checkout completed status=200 for cart_16330 total_items=2
+2026-10-10 03:22:45 INFO [checkout] Cart checkout completed status=200 for cart_53153 total_items=3
+2026-10-10 03:22:46 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=17/50
+2026-10-10 03:22:46 INFO [payment] Transaction processed successfully for tx_453826 latency=47ms
+2026-10-10 03:22:47 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=60ms status=200
+2026-10-10 03:22:47 INFO [payment] Transaction processed successfully for tx_305652 latency=43ms
+2026-10-10 03:22:48 INFO [checkout] Cart checkout completed status=200 for cart_20597 total_items=2
+2026-10-10 03:22:48 INFO [payment] Transaction processed successfully for tx_225007 latency=48ms
+2026-10-10 03:22:49 INFO [cache] Cache hit key session_5384 latency=4ms
+2026-10-10 03:22:49 INFO [auth] Token verified for user_3385
+2026-10-10 03:22:50 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=23/50
+2026-10-10 03:22:50 INFO [payment] Transaction processed successfully for tx_951149 latency=47ms
+2026-10-10 03:22:51 INFO [auth] Token verified for user_9471
+2026-10-10 03:22:51 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=81ms status=200
+2026-10-10 03:22:52 INFO [auth] Token verified for user_3478
+2026-10-10 03:22:52 INFO [cache] Cache hit key session_2020 latency=3ms
+2026-10-10 03:22:53 INFO [checkout] Cart checkout completed status=200 for cart_41929 total_items=2
+2026-10-10 03:22:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=51ms status=200
+2026-10-10 03:22:54 INFO [checkout] Cart checkout completed status=200 for cart_90287 total_items=2
+2026-10-10 03:22:54 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=20/50
+2026-10-10 03:22:55 INFO [auth] Token verified for user_8191
+2026-10-10 03:22:55 INFO [cache] Cache hit key session_1544 latency=2ms
+2026-10-10 03:22:56 INFO [checkout] Cart checkout completed status=200 for cart_14276 total_items=5
+2026-10-10 03:22:56 INFO [auth] Token verified for user_9849
+2026-10-10 03:22:57 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=22/50
+2026-10-10 03:22:57 INFO [payment] Transaction processed successfully for tx_852680 latency=45ms
+2026-10-10 03:22:58 INFO [payment] Transaction processed successfully for tx_789507 latency=49ms
+2026-10-10 03:22:58 INFO [auth] Token verified for user_3913
+2026-10-10 03:22:59 INFO [auth] Token verified for user_5194
+2026-10-10 03:22:59 INFO [cache] Cache hit key session_6079 latency=2ms
+2026-10-10 03:23:00 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=15/50
+2026-10-10 03:23:00 INFO [auth] Token verified for user_6523
+2026-10-10 03:23:01 INFO [cache] Cache hit key session_2782 latency=4ms
+2026-10-10 03:23:01 INFO [cache] Cache hit key session_2494 latency=4ms
+2026-10-10 03:23:02 INFO [payment] Transaction processed successfully for tx_353985 latency=59ms
+2026-10-10 03:23:02 INFO [cache] Cache hit key session_5298 latency=3ms
+2026-10-10 03:23:03 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=27/50
+2026-10-10 03:23:03 INFO [checkout] Cart checkout completed status=200 for cart_51826 total_items=3
+2026-10-10 03:23:04 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=61ms status=200
+2026-10-10 03:23:04 INFO [payment] Transaction processed successfully for tx_634008 latency=43ms
+2026-10-10 03:23:05 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=89ms status=200
+2026-10-10 03:23:05 INFO [checkout] Cart checkout completed status=200 for cart_95714 total_items=5
+2026-10-10 03:23:06 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=52ms status=200
+2026-10-10 03:23:06 INFO [cache] Cache hit key session_9704 latency=4ms
+2026-10-10 03:23:07 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=47ms status=200
+2026-10-10 03:23:07 INFO [auth] Token verified for user_3455
+2026-10-10 03:23:08 INFO [auth] Token verified for user_7927
+2026-10-10 03:23:08 INFO [cache] Cache hit key session_8394 latency=2ms
+2026-10-10 03:23:09 INFO [cache] Cache hit key session_1113 latency=4ms
+2026-10-10 03:23:09 INFO [payment] Transaction processed successfully for tx_391913 latency=54ms
+2026-10-10 03:23:10 INFO [cache] Cache hit key session_7791 latency=2ms
+2026-10-10 03:23:10 INFO [payment] Transaction processed successfully for tx_332513 latency=60ms
+2026-10-10 03:23:11 INFO [cache] Cache hit key session_5798 latency=3ms
+2026-10-10 03:23:11 INFO [auth] Token verified for user_2550
+2026-10-10 03:23:12 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=27/50
+2026-10-10 03:23:12 INFO [checkout] Cart checkout completed status=200 for cart_90893 total_items=2
+2026-10-10 03:23:13 INFO [payment] Transaction processed successfully for tx_847720 latency=42ms
+2026-10-10 03:23:13 INFO [payment] Transaction processed successfully for tx_933179 latency=52ms
+2026-10-10 03:23:14 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=19/50
+2026-10-10 03:23:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=68ms status=200
+2026-10-10 03:23:15 INFO [payment] Transaction processed successfully for tx_696162 latency=40ms
+2026-10-10 03:23:15 INFO [checkout] Cart checkout completed status=200 for cart_66395 total_items=5
+2026-10-10 03:23:16 INFO [cache] Cache hit key session_2732 latency=2ms
+2026-10-10 03:23:16 INFO [auth] Token verified for user_8693
+2026-10-10 03:23:17 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=14/50
+2026-10-10 03:23:17 INFO [checkout] Cart checkout completed status=200 for cart_65079 total_items=4
+2026-10-10 03:23:18 INFO [payment] Transaction processed successfully for tx_545013 latency=54ms
+2026-10-10 03:23:18 INFO [payment] Transaction processed successfully for tx_796265 latency=37ms
+2026-10-10 03:23:19 INFO [checkout] Cart checkout completed status=200 for cart_78899 total_items=4
+2026-10-10 03:23:19 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=15/50
+2026-10-10 03:23:20 INFO [checkout] Cart checkout completed status=200 for cart_48986 total_items=3
+2026-10-10 03:23:20 INFO [checkout] Cart checkout completed status=200 for cart_52876 total_items=2
+2026-10-10 03:23:21 INFO [cache] Cache hit key session_2985 latency=4ms
+2026-10-10 03:23:21 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=71ms status=200
+2026-10-10 03:23:22 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=26/50
+2026-10-10 03:23:22 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=12/50
+2026-10-10 03:23:23 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:23:23 INFO [payment] Transaction processed successfully for tx_504839 latency=44ms
+2026-10-10 03:23:24 INFO [cache] Cache hit key session_2430 latency=1ms
+2026-10-10 03:23:24 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=13/50
+2026-10-10 03:23:25 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=45ms status=200
+2026-10-10 03:23:25 INFO [checkout] Cart checkout completed status=200 for cart_15895 total_items=1
+2026-10-10 03:23:26 INFO [checkout] Cart checkout completed status=200 for cart_54999 total_items=2
+2026-10-10 03:23:26 INFO [payment] Transaction processed successfully for tx_126050 latency=56ms
+2026-10-10 03:23:27 INFO [auth] Token verified for user_3229
+2026-10-10 03:23:27 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:23:28 INFO [cache] Cache hit key session_8907 latency=4ms
+2026-10-10 03:23:28 INFO [payment] Transaction processed successfully for tx_405503 latency=39ms
+2026-10-10 03:23:29 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:23:29 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=55ms status=200
+2026-10-10 03:23:30 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=62ms status=200
+2026-10-10 03:23:30 INFO [cache] Cache hit key session_6656 latency=4ms
+2026-10-10 03:23:31 INFO [cache] Cache hit key session_8666 latency=1ms
+2026-10-10 03:23:31 INFO [cache] Cache hit key session_2870 latency=2ms
+2026-10-10 03:23:32 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=88ms status=200
+2026-10-10 03:23:32 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=68ms status=200
+2026-10-10 03:23:33 INFO [checkout] Cart checkout completed status=200 for cart_16964 total_items=5
+2026-10-10 03:23:33 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=12/50
+2026-10-10 03:23:34 INFO [auth] Token verified for user_6795
+2026-10-10 03:23:34 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=12/50
+2026-10-10 03:23:35 INFO [payment] Transaction processed successfully for tx_685641 latency=40ms
+2026-10-10 03:23:35 INFO [checkout] Cart checkout completed status=200 for cart_67248 total_items=1
+2026-10-10 03:23:36 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=20/50
+2026-10-10 03:23:36 INFO [checkout] Cart checkout completed status=200 for cart_94385 total_items=5
+2026-10-10 03:23:37 INFO [auth] Token verified for user_9869
+2026-10-10 03:23:37 INFO [checkout] Cart checkout completed status=200 for cart_99723 total_items=3
+2026-10-10 03:23:38 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=20/50
+2026-10-10 03:23:38 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=85ms status=200
+2026-10-10 03:23:39 INFO [payment] Transaction processed successfully for tx_791813 latency=51ms
+2026-10-10 03:23:39 INFO [cache] Cache hit key session_9711 latency=3ms
+2026-10-10 03:23:40 INFO [checkout] Cart checkout completed status=200 for cart_34620 total_items=2
+2026-10-10 03:23:40 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=23/50
+2026-10-10 03:23:41 INFO [checkout] Cart checkout completed status=200 for cart_46945 total_items=2
+2026-10-10 03:23:41 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=13/50
+2026-10-10 03:23:42 INFO [cache] Cache hit key session_9699 latency=1ms
+2026-10-10 03:23:42 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=24/50
+2026-10-10 03:23:43 INFO [checkout] Cart checkout completed status=200 for cart_38248 total_items=3
+2026-10-10 03:23:43 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=13/50
+2026-10-10 03:23:44 INFO [checkout] Cart checkout completed status=200 for cart_16195 total_items=2
+2026-10-10 03:23:44 INFO [auth] Token verified for user_4041
+2026-10-10 03:23:45 INFO [checkout] Cart checkout completed status=200 for cart_17436 total_items=5
+2026-10-10 03:23:45 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=60ms status=200
+2026-10-10 03:23:46 INFO [payment] Transaction processed successfully for tx_650870 latency=44ms
+2026-10-10 03:23:46 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=14/50
+2026-10-10 03:23:47 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=28/50
+2026-10-10 03:23:47 INFO [payment] Transaction processed successfully for tx_881725 latency=56ms
+2026-10-10 03:23:48 INFO [payment] Transaction processed successfully for tx_860386 latency=54ms
+2026-10-10 03:23:48 INFO [payment] Transaction processed successfully for tx_775192 latency=54ms
+2026-10-10 03:23:49 INFO [payment] Transaction processed successfully for tx_268631 latency=56ms
+2026-10-10 03:23:49 INFO [auth] Token verified for user_9379
+2026-10-10 03:23:50 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=20/50
+2026-10-10 03:23:50 INFO [checkout] Cart checkout completed status=200 for cart_78723 total_items=3
+2026-10-10 03:23:51 INFO [payment] Transaction processed successfully for tx_931912 latency=60ms
+2026-10-10 03:23:51 INFO [checkout] Cart checkout completed status=200 for cart_21923 total_items=3
+2026-10-10 03:23:52 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=65ms status=200
+2026-10-10 03:23:52 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=26/50
+2026-10-10 03:23:53 INFO [payment] Transaction processed successfully for tx_129316 latency=48ms
+2026-10-10 03:23:53 INFO [auth] Token verified for user_3532
+2026-10-10 03:23:54 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=63ms status=200
+2026-10-10 03:23:54 INFO [checkout] Cart checkout completed status=200 for cart_45116 total_items=5
+2026-10-10 03:23:55 INFO [payment] Transaction processed successfully for tx_538892 latency=38ms
+2026-10-10 03:23:55 INFO [checkout] Cart checkout completed status=200 for cart_94530 total_items=1
+2026-10-10 03:23:56 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=27/50
+2026-10-10 03:23:56 INFO [cache] Cache hit key session_7932 latency=4ms
+2026-10-10 03:23:57 INFO [cache] Cache hit key session_8595 latency=1ms
+2026-10-10 03:23:57 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=26/50
+2026-10-10 03:23:58 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=73ms status=200
+2026-10-10 03:23:58 INFO [cache] Cache hit key session_9619 latency=4ms
+2026-10-10 03:23:59 INFO [cache] Cache hit key session_7050 latency=1ms
+2026-10-10 03:23:59 INFO [checkout] Cart checkout completed status=200 for cart_45196 total_items=4
+2026-10-10 03:24:00 INFO [auth] Token verified for user_9412
+2026-10-10 03:24:00 INFO [cache] Cache hit key session_8482 latency=2ms
+2026-10-10 03:24:01 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=19/50
+2026-10-10 03:24:01 INFO [checkout] Cart checkout completed status=200 for cart_75103 total_items=5
+2026-10-10 03:24:02 INFO [cache] Cache hit key session_5689 latency=4ms
+2026-10-10 03:24:02 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=52ms status=200
+2026-10-10 03:24:03 INFO [payment] Transaction processed successfully for tx_543457 latency=49ms
+2026-10-10 03:24:03 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=12/50
+2026-10-10 03:24:04 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=17/50
+2026-10-10 03:24:04 INFO [payment] Transaction processed successfully for tx_915645 latency=36ms
+2026-10-10 03:24:05 INFO [checkout] Cart checkout completed status=200 for cart_88662 total_items=5
+2026-10-10 03:24:05 INFO [payment] Transaction processed successfully for tx_607792 latency=45ms
+2026-10-10 03:24:06 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=88ms status=200
+2026-10-10 03:24:06 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=60ms status=200
+2026-10-10 03:24:07 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:24:07 INFO [checkout] Cart checkout completed status=200 for cart_61268 total_items=1
+2026-10-10 03:24:08 INFO [auth] Token verified for user_2300
+2026-10-10 03:24:08 INFO [payment] Transaction processed successfully for tx_398827 latency=36ms
+2026-10-10 03:24:09 INFO [checkout] Cart checkout completed status=200 for cart_70771 total_items=3
+2026-10-10 03:24:09 INFO [payment] Transaction processed successfully for tx_525990 latency=45ms
+2026-10-10 03:24:10 INFO [payment] Transaction processed successfully for tx_579309 latency=36ms
+2026-10-10 03:24:10 INFO [payment] Transaction processed successfully for tx_869957 latency=46ms
+2026-10-10 03:24:11 INFO [checkout] Cart checkout completed status=200 for cart_91094 total_items=3
+2026-10-10 03:24:11 INFO [cache] Cache hit key session_4635 latency=3ms
+2026-10-10 03:24:12 INFO [cache] Cache hit key session_8208 latency=3ms
+2026-10-10 03:24:12 INFO [checkout] Cart checkout completed status=200 for cart_15356 total_items=3
+2026-10-10 03:24:13 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=67ms status=200
+2026-10-10 03:24:13 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=26/50
+2026-10-10 03:24:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=65ms status=200
+2026-10-10 03:24:14 INFO [cache] Cache hit key session_7766 latency=3ms
+2026-10-10 03:24:15 INFO [checkout] Cart checkout completed status=200 for cart_22266 total_items=3
+2026-10-10 03:24:15 INFO [checkout] Cart checkout completed status=200 for cart_80050 total_items=4
+2026-10-10 03:24:16 INFO [cache] Cache hit key session_2414 latency=2ms
+2026-10-10 03:24:16 INFO [checkout] Cart checkout completed status=200 for cart_20815 total_items=5
+2026-10-10 03:24:17 INFO [checkout] Cart checkout completed status=200 for cart_42228 total_items=2
+2026-10-10 03:24:17 INFO [cache] Cache hit key session_8372 latency=4ms
+2026-10-10 03:24:18 INFO [cache] Cache hit key session_6632 latency=4ms
+2026-10-10 03:24:18 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=25/50
+2026-10-10 03:24:19 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=74ms status=200
+2026-10-10 03:24:19 INFO [auth] Token verified for user_5278
+2026-10-10 03:24:20 INFO [payment] Transaction processed successfully for tx_932980 latency=55ms
+2026-10-10 03:24:20 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=76ms status=200
+2026-10-10 03:24:21 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=85ms status=200
+2026-10-10 03:24:21 INFO [auth] Token verified for user_6947
+2026-10-10 03:24:22 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=46ms status=200
+2026-10-10 03:24:22 INFO [checkout] Cart checkout completed status=200 for cart_37454 total_items=3
+2026-10-10 03:24:23 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=63ms status=200
+2026-10-10 03:24:23 INFO [payment] Transaction processed successfully for tx_327922 latency=47ms
+2026-10-10 03:24:24 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=12/50
+2026-10-10 03:24:24 INFO [cache] Cache hit key session_9422 latency=1ms
+2026-10-10 03:24:25 INFO [auth] Token verified for user_2369
+2026-10-10 03:24:25 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=80ms status=200
+2026-10-10 03:24:26 INFO [cache] Cache hit key session_9328 latency=1ms
+2026-10-10 03:24:26 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=62ms status=200
+2026-10-10 03:24:27 INFO [auth] Token verified for user_7721
+2026-10-10 03:24:27 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=75ms status=200
+2026-10-10 03:24:28 INFO [cache] Cache hit key session_8206 latency=2ms
+2026-10-10 03:24:28 INFO [auth] Token verified for user_3400
+2026-10-10 03:24:29 INFO [cache] Cache hit key session_3313 latency=2ms
+2026-10-10 03:24:29 INFO [checkout] Cart checkout completed status=200 for cart_99842 total_items=2
+2026-10-10 03:24:30 INFO [cache] Cache hit key session_9983 latency=3ms
+2026-10-10 03:24:30 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:24:31 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=50ms status=200
+2026-10-10 03:24:31 INFO [cache] Cache hit key session_7780 latency=3ms
+2026-10-10 03:24:32 INFO [cache] Cache hit key session_7162 latency=1ms
+2026-10-10 03:24:32 INFO [checkout] Cart checkout completed status=200 for cart_93580 total_items=4
+2026-10-10 03:24:33 INFO [cache] Cache hit key session_5943 latency=1ms
+2026-10-10 03:24:33 INFO [cache] Cache hit key session_4898 latency=2ms
+2026-10-10 03:24:34 INFO [auth] Token verified for user_3712
+2026-10-10 03:24:34 INFO [cache] Cache hit key session_2362 latency=4ms
+2026-10-10 03:24:35 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=64ms status=200
+2026-10-10 03:24:35 INFO [auth] Token verified for user_3795
+2026-10-10 03:24:36 INFO [payment] Transaction processed successfully for tx_718206 latency=46ms
+2026-10-10 03:24:36 INFO [checkout] Cart checkout completed status=200 for cart_10896 total_items=2
+2026-10-10 03:24:37 INFO [checkout] Cart checkout completed status=200 for cart_99537 total_items=1
+2026-10-10 03:24:37 INFO [cache] Cache hit key session_9253 latency=1ms
+2026-10-10 03:24:38 INFO [payment] Transaction processed successfully for tx_278892 latency=52ms
+2026-10-10 03:24:38 INFO [checkout] Cart checkout completed status=200 for cart_51936 total_items=3
+2026-10-10 03:24:39 INFO [auth] Token verified for user_6799
+2026-10-10 03:24:39 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=69ms status=200
+2026-10-10 03:24:40 INFO [cache] Cache hit key session_5911 latency=4ms
+2026-10-10 03:24:40 INFO [payment] Transaction processed successfully for tx_869000 latency=45ms
+2026-10-10 03:24:41 INFO [cache] Cache hit key session_7473 latency=1ms
+2026-10-10 03:24:41 INFO [auth] Token verified for user_7685
+2026-10-10 03:24:42 INFO [payment] Transaction processed successfully for tx_884759 latency=54ms
+2026-10-10 03:24:42 INFO [payment] Transaction processed successfully for tx_786928 latency=42ms
+2026-10-10 03:24:43 INFO [checkout] Cart checkout completed status=200 for cart_90710 total_items=3
+2026-10-10 03:24:43 INFO [auth] Token verified for user_5528
+2026-10-10 03:24:44 INFO [cache] Cache hit key session_8632 latency=2ms
+2026-10-10 03:24:44 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=16/50
+2026-10-10 03:24:45 INFO [cache] Cache hit key session_8981 latency=4ms
+2026-10-10 03:24:45 INFO [payment] Transaction processed successfully for tx_593981 latency=37ms
+2026-10-10 03:24:46 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=72ms status=200
+2026-10-10 03:24:46 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=83ms status=200
+2026-10-10 03:24:47 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:24:47 INFO [checkout] Cart checkout completed status=200 for cart_47114 total_items=3
+2026-10-10 03:24:48 INFO [auth] Token verified for user_6718
+2026-10-10 03:24:48 INFO [checkout] Cart checkout completed status=200 for cart_10675 total_items=1
+2026-10-10 03:24:49 INFO [cache] Cache hit key session_4894 latency=1ms
+2026-10-10 03:24:49 INFO [auth] Token verified for user_4871
+2026-10-10 03:24:50 INFO [auth] Token verified for user_3443
+2026-10-10 03:24:50 INFO [auth] Token verified for user_1261
+2026-10-10 03:24:51 INFO [auth] Token verified for user_7731
+2026-10-10 03:24:51 INFO [payment] Transaction processed successfully for tx_205367 latency=49ms
+2026-10-10 03:24:52 INFO [checkout] Cart checkout completed status=200 for cart_60725 total_items=4
+2026-10-10 03:24:52 INFO [payment] Transaction processed successfully for tx_415770 latency=46ms
+2026-10-10 03:24:53 INFO [auth] Token verified for user_1810
+2026-10-10 03:24:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=54ms status=200
+2026-10-10 03:24:54 INFO [auth] Token verified for user_7363
+2026-10-10 03:24:54 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=21/50
+2026-10-10 03:24:55 INFO [payment] Transaction processed successfully for tx_442168 latency=53ms
+2026-10-10 03:24:55 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=59ms status=200
+2026-10-10 03:24:56 INFO [auth] Token verified for user_5845
+2026-10-10 03:24:56 INFO [auth] Token verified for user_7516
+2026-10-10 03:24:57 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=28/50
+2026-10-10 03:24:57 INFO [auth] Token verified for user_5557
+2026-10-10 03:24:58 INFO [auth] Token verified for user_2281
+2026-10-10 03:24:58 INFO [cache] Cache hit key session_3276 latency=2ms
+2026-10-10 03:24:59 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=17/50
+2026-10-10 03:24:59 INFO [cache] Cache hit key session_8997 latency=3ms
+2026-10-10 03:25:00 INFO [payment] Transaction processed successfully for tx_926607 latency=42ms
+2026-10-10 03:25:00 INFO [cache] Cache hit key session_5579 latency=1ms
+2026-10-10 03:25:01 INFO [payment] Transaction processed successfully for tx_860964 latency=46ms
+2026-10-10 03:25:01 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=28/50
+2026-10-10 03:25:02 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=18/50
+2026-10-10 03:25:02 INFO [cache] Cache hit key session_3441 latency=4ms
+2026-10-10 03:25:03 INFO [cache] Cache hit key session_1604 latency=1ms
+2026-10-10 03:25:03 INFO [auth] Token verified for user_4973
+2026-10-10 03:25:04 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=26/50
+2026-10-10 03:25:04 INFO [cache] Cache hit key session_4739 latency=4ms
+2026-10-10 03:25:05 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=72ms status=200
+2026-10-10 03:25:05 INFO [cache] Cache hit key session_6561 latency=1ms
+2026-10-10 03:25:06 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=28/50
+2026-10-10 03:25:06 INFO [checkout] Cart checkout completed status=200 for cart_86557 total_items=3
+2026-10-10 03:25:07 INFO [payment] Transaction processed successfully for tx_587424 latency=50ms
+2026-10-10 03:25:07 INFO [checkout] Cart checkout completed status=200 for cart_86409 total_items=5
+2026-10-10 03:25:08 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=17/50
+2026-10-10 03:25:08 INFO [cache] Cache hit key session_2303 latency=4ms
+2026-10-10 03:25:09 INFO [checkout] Cart checkout completed status=200 for cart_23086 total_items=1
+2026-10-10 03:25:09 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=20/50
+2026-10-10 03:25:10 INFO [checkout] Cart checkout completed status=200 for cart_35308 total_items=5
+2026-10-10 03:25:10 INFO [payment] Transaction processed successfully for tx_665534 latency=57ms
+2026-10-10 03:25:11 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=19/50
+2026-10-10 03:25:11 INFO [payment] Transaction processed successfully for tx_831713 latency=36ms
+2026-10-10 03:25:12 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=25/50
+2026-10-10 03:25:12 INFO [auth] Token verified for user_6247
+2026-10-10 03:25:13 INFO [payment] Transaction processed successfully for tx_895059 latency=46ms
+2026-10-10 03:25:13 INFO [auth] Token verified for user_4229
+2026-10-10 03:25:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=49ms status=200
+2026-10-10 03:25:14 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=20/50
+2026-10-10 03:25:15 INFO [auth] Token verified for user_7899
+2026-10-10 03:25:15 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=21/50
+2026-10-10 03:25:16 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=12/50
+2026-10-10 03:25:16 INFO [payment] Transaction processed successfully for tx_450646 latency=49ms
+2026-10-10 03:25:17 INFO [auth] Token verified for user_7437
+2026-10-10 03:25:17 INFO [checkout] Cart checkout completed status=200 for cart_92140 total_items=2
+2026-10-10 03:25:18 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=14/50
+2026-10-10 03:25:18 INFO [cache] Cache hit key session_7108 latency=4ms
+2026-10-10 03:25:19 INFO [payment] Transaction processed successfully for tx_261965 latency=56ms
+2026-10-10 03:25:19 INFO [cache] Cache hit key session_7840 latency=3ms
+2026-10-10 03:25:20 INFO [payment] Transaction processed successfully for tx_188174 latency=38ms
+2026-10-10 03:25:20 INFO [cache] Cache hit key session_7442 latency=4ms
+2026-10-10 03:25:21 INFO [checkout] Cart checkout completed status=200 for cart_14734 total_items=5
+2026-10-10 03:25:21 INFO [payment] Transaction processed successfully for tx_305081 latency=45ms
+2026-10-10 03:25:22 INFO [auth] Token verified for user_4013
+2026-10-10 03:25:22 INFO [checkout] Cart checkout completed status=200 for cart_53402 total_items=2
+2026-10-10 03:25:23 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=79ms status=200
+2026-10-10 03:25:23 INFO [cache] Cache hit key session_9376 latency=4ms
+2026-10-10 03:25:24 INFO [auth] Token verified for user_1324
+2026-10-10 03:25:24 INFO [auth] Token verified for user_7617
+2026-10-10 03:25:25 INFO [db] Connection acquired in 14ms for pool pg-primary active_leases=24/50
+2026-10-10 03:25:25 INFO [cache] Cache hit key session_4126 latency=2ms
+2026-10-10 03:25:26 INFO [payment] Transaction processed successfully for tx_498209 latency=55ms
+2026-10-10 03:25:26 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=24/50
+2026-10-10 03:25:27 INFO [cache] Cache hit key session_2575 latency=1ms
+2026-10-10 03:25:27 INFO [auth] Token verified for user_8518
+2026-10-10 03:25:28 INFO [checkout] Cart checkout completed status=200 for cart_51255 total_items=3
+2026-10-10 03:25:28 INFO [checkout] Cart checkout completed status=200 for cart_84917 total_items=2
+2026-10-10 03:25:29 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=12/50
+2026-10-10 03:25:29 INFO [cache] Cache hit key session_6703 latency=1ms
+2026-10-10 03:25:30 INFO [checkout] Cart checkout completed status=200 for cart_93858 total_items=4
+2026-10-10 03:25:30 INFO [payment] Transaction processed successfully for tx_370339 latency=39ms
+2026-10-10 03:25:31 INFO [checkout] Cart checkout completed status=200 for cart_76145 total_items=1
+2026-10-10 03:25:31 INFO [cache] Cache hit key session_7821 latency=2ms
+2026-10-10 03:25:32 INFO [checkout] Cart checkout completed status=200 for cart_51267 total_items=3
+2026-10-10 03:25:32 INFO [cache] Cache hit key session_1824 latency=4ms
+2026-10-10 03:25:33 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=57ms status=200
+2026-10-10 03:25:33 INFO [payment] Transaction processed successfully for tx_624283 latency=44ms
+2026-10-10 03:25:34 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=26/50
+2026-10-10 03:25:34 INFO [payment] Transaction processed successfully for tx_309024 latency=46ms
+2026-10-10 03:25:35 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=83ms status=200
+2026-10-10 03:25:35 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=16/50
+2026-10-10 03:25:36 INFO [cache] Cache hit key session_4103 latency=4ms
+2026-10-10 03:25:36 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=18/50
+2026-10-10 03:25:37 INFO [payment] Transaction processed successfully for tx_486270 latency=35ms
+2026-10-10 03:25:37 INFO [cache] Cache hit key session_2614 latency=4ms
+2026-10-10 03:25:38 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=72ms status=200
+2026-10-10 03:25:38 INFO [payment] Transaction processed successfully for tx_566719 latency=41ms
+2026-10-10 03:25:39 INFO [payment] Transaction processed successfully for tx_221339 latency=59ms
+2026-10-10 03:25:39 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:25:40 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=66ms status=200
+2026-10-10 03:25:40 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=45ms status=200
+2026-10-10 03:25:41 INFO [checkout] Cart checkout completed status=200 for cart_93232 total_items=3
+2026-10-10 03:25:41 INFO [checkout] Cart checkout completed status=200 for cart_73572 total_items=3
+2026-10-10 03:25:42 INFO [cache] Cache hit key session_1431 latency=3ms
+2026-10-10 03:25:42 INFO [db] Connection acquired in 2ms for pool pg-primary active_leases=26/50
+2026-10-10 03:25:43 INFO [auth] Token verified for user_5878
+2026-10-10 03:25:43 INFO [payment] Transaction processed successfully for tx_283513 latency=35ms
+2026-10-10 03:25:44 INFO [payment] Transaction processed successfully for tx_796718 latency=59ms
+2026-10-10 03:25:44 INFO [checkout] Cart checkout completed status=200 for cart_92933 total_items=2
+2026-10-10 03:25:45 INFO [cache] Cache hit key session_6770 latency=1ms
+2026-10-10 03:25:45 INFO [auth] Token verified for user_2081
+2026-10-10 03:25:46 INFO [payment] Transaction processed successfully for tx_961413 latency=47ms
+2026-10-10 03:25:46 INFO [payment] Transaction processed successfully for tx_891358 latency=39ms
+2026-10-10 03:25:47 INFO [cache] Cache hit key session_7549 latency=4ms
+2026-10-10 03:25:47 INFO [payment] Transaction processed successfully for tx_470682 latency=40ms
+2026-10-10 03:25:48 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=23/50
+2026-10-10 03:25:48 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=62ms status=200
+2026-10-10 03:25:49 INFO [cache] Cache hit key session_6959 latency=2ms
+2026-10-10 03:25:49 INFO [cache] Cache hit key session_6968 latency=1ms
+2026-10-10 03:25:50 INFO [payment] Transaction processed successfully for tx_148937 latency=39ms
+2026-10-10 03:25:50 INFO [payment] Transaction processed successfully for tx_975586 latency=57ms
+2026-10-10 03:25:51 INFO [payment] Transaction processed successfully for tx_409835 latency=46ms
+2026-10-10 03:25:51 INFO [db] Connection acquired in 9ms for pool pg-primary active_leases=17/50
+2026-10-10 03:25:52 INFO [cache] Cache hit key session_6369 latency=1ms
+2026-10-10 03:25:52 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=88ms status=200
+2026-10-10 03:25:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=76ms status=200
+2026-10-10 03:25:53 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=70ms status=200
+2026-10-10 03:25:54 INFO [auth] Token verified for user_4630
+2026-10-10 03:25:54 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=71ms status=200
+2026-10-10 03:25:55 INFO [cache] Cache hit key session_7526 latency=2ms
+2026-10-10 03:25:55 INFO [payment] Transaction processed successfully for tx_154080 latency=44ms
+2026-10-10 03:25:56 INFO [auth] Token verified for user_2005
+2026-10-10 03:25:56 INFO [payment] Transaction processed successfully for tx_152042 latency=37ms
+2026-10-10 03:25:57 INFO [cache] Cache hit key session_1661 latency=1ms
+2026-10-10 03:25:57 INFO [checkout] Cart checkout completed status=200 for cart_29986 total_items=4
+2026-10-10 03:25:58 INFO [auth] Token verified for user_6844
+2026-10-10 03:25:58 INFO [auth] Token verified for user_8921
+2026-10-10 03:25:59 INFO [auth] Token verified for user_4376
+2026-10-10 03:25:59 INFO [auth] Token verified for user_3517
+2026-10-10 03:26:00 INFO [payment] Transaction processed successfully for tx_619163 latency=45ms
+2026-10-10 03:26:00 INFO [checkout] Cart checkout completed status=200 for cart_83943 total_items=4
+2026-10-10 03:26:01 INFO [payment] Transaction processed successfully for tx_911047 latency=49ms
+2026-10-10 03:26:01 INFO [checkout] Cart checkout completed status=200 for cart_91707 total_items=3
+2026-10-10 03:26:02 INFO [payment] Transaction processed successfully for tx_408408 latency=59ms
+2026-10-10 03:26:02 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=66ms status=200
+2026-10-10 03:26:03 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=68ms status=200
+2026-10-10 03:26:03 INFO [cache] Cache hit key session_8785 latency=3ms
+2026-10-10 03:26:04 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=20/50
+2026-10-10 03:26:04 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=27/50
+2026-10-10 03:26:05 INFO [auth] Token verified for user_5711
+2026-10-10 03:26:05 INFO [checkout] Cart checkout completed status=200 for cart_47523 total_items=4
+2026-10-10 03:26:06 INFO [auth] Token verified for user_6585
+2026-10-10 03:26:06 INFO [payment] Transaction processed successfully for tx_959728 latency=51ms
+2026-10-10 03:26:07 INFO [db] Connection acquired in 7ms for pool pg-primary active_leases=23/50
+2026-10-10 03:26:07 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=13/50
+2026-10-10 03:26:08 INFO [payment] Transaction processed successfully for tx_643777 latency=54ms
+2026-10-10 03:26:08 INFO [auth] Token verified for user_1233
+2026-10-10 03:26:09 INFO [auth] Token verified for user_7601
+2026-10-10 03:26:09 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=60ms status=200
+2026-10-10 03:26:10 INFO [checkout] Cart checkout completed status=200 for cart_91214 total_items=3
+2026-10-10 03:26:10 INFO [cache] Cache hit key session_2359 latency=1ms
+2026-10-10 03:26:11 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=50ms status=200
+2026-10-10 03:26:11 INFO [payment] Transaction processed successfully for tx_308166 latency=40ms
+2026-10-10 03:26:12 INFO [checkout] Cart checkout completed status=200 for cart_92366 total_items=3
+2026-10-10 03:26:12 INFO [auth] Token verified for user_1760
+2026-10-10 03:26:13 INFO [checkout] Cart checkout completed status=200 for cart_24571 total_items=3
+2026-10-10 03:26:13 INFO [cache] Cache hit key session_7739 latency=2ms
+2026-10-10 03:26:14 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=74ms status=200
+2026-10-10 03:26:14 INFO [cache] Cache hit key session_9171 latency=1ms
+2026-10-10 03:26:15 INFO [auth] Token verified for user_8195
+2026-10-10 03:26:15 INFO [cache] Cache hit key session_4089 latency=2ms
+2026-10-10 03:26:16 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=20/50
+2026-10-10 03:26:16 INFO [auth] Token verified for user_9690
+2026-10-10 03:26:17 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=22/50
+2026-10-10 03:26:17 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=24/50
+2026-10-10 03:26:18 INFO [auth] Token verified for user_9060
+2026-10-10 03:26:18 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=24/50
+2026-10-10 03:26:19 INFO [checkout] Cart checkout completed status=200 for cart_58054 total_items=5
+2026-10-10 03:26:19 INFO [db] Connection acquired in 8ms for pool pg-primary active_leases=19/50
+2026-10-10 03:26:20 INFO [checkout] Cart checkout completed status=200 for cart_83291 total_items=1
+2026-10-10 03:26:20 INFO [cache] Cache hit key session_1117 latency=1ms
+2026-10-10 03:26:21 INFO [db] Connection acquired in 5ms for pool pg-primary active_leases=23/50
+2026-10-10 03:26:21 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=26/50
+2026-10-10 03:26:22 INFO [auth] Token verified for user_5881
+2026-10-10 03:26:22 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=78ms status=200
+2026-10-10 03:26:23 INFO [cache] Cache hit key session_2186 latency=4ms
+2026-10-10 03:26:23 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=28/50
+2026-10-10 03:26:24 INFO [checkout] Cart checkout completed status=200 for cart_76885 total_items=4
+2026-10-10 03:26:24 INFO [auth] Token verified for user_6980
+2026-10-10 03:26:25 INFO [db] Connection acquired in 11ms for pool pg-primary active_leases=16/50
+2026-10-10 03:26:25 INFO [cache] Cache hit key session_3105 latency=4ms
+2026-10-10 03:26:26 INFO [cache] Cache hit key session_9008 latency=2ms
+2026-10-10 03:26:26 INFO [auth] Token verified for user_2570
+2026-10-10 03:26:27 INFO [db] Connection acquired in 3ms for pool pg-primary active_leases=21/50
+2026-10-10 03:26:27 INFO [db] Connection acquired in 13ms for pool pg-primary active_leases=25/50
+2026-10-10 03:26:28 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=15/50
+2026-10-10 03:26:28 INFO [cache] Cache hit key session_4851 latency=2ms
+2026-10-10 03:26:29 INFO [auth] Token verified for user_7464
+2026-10-10 03:26:29 INFO [auth] Token verified for user_3523
+2026-10-10 03:26:30 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=12/50
+2026-10-10 03:26:30 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=25/50
+2026-10-10 03:26:31 INFO [cache] Cache hit key session_5900 latency=2ms
+2026-10-10 03:26:31 INFO [cache] Cache hit key session_2408 latency=4ms
+2026-10-10 03:26:32 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=13/50
+2026-10-10 03:26:32 INFO [db] Connection acquired in 6ms for pool pg-primary active_leases=18/50
+2026-10-10 03:26:33 INFO [checkout] Cart checkout completed status=200 for cart_42571 total_items=3
+2026-10-10 03:26:33 INFO [checkout] Cart checkout completed status=200 for cart_85168 total_items=3
+2026-10-10 03:26:34 INFO [auth] Token verified for user_9587
+2026-10-10 03:26:34 INFO [checkout] Cart checkout completed status=200 for cart_84471 total_items=5
+2026-10-10 03:26:35 INFO [db] Connection acquired in 4ms for pool pg-primary active_leases=13/50
+2026-10-10 03:26:35 INFO [checkout] Cart checkout completed status=200 for cart_67018 total_items=2
+2026-10-10 03:26:36 INFO [checkout] Cart checkout completed status=200 for cart_89316 total_items=3
+2026-10-10 03:26:36 INFO [cache] Cache hit key session_7914 latency=1ms
+2026-10-10 03:26:37 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=18/50
+2026-10-10 03:26:37 INFO [auth] Token verified for user_7197
+2026-10-10 03:26:38 INFO [db] Connection acquired in 12ms for pool pg-primary active_leases=19/50
+2026-10-10 03:26:38 INFO [api-gateway] HTTP 200 POST /api/v2/orders/submit latency=86ms status=200
+2026-10-10 03:26:39 INFO [db] Connection acquired in 10ms for pool pg-primary active_leases=25/50
+2026-10-10 03:26:39 INFO [cache] Cache hit key session_6385 latency=4ms

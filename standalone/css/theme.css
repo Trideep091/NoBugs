@@ -1,0 +1,92 @@
+/* ==========================================================================
+   NoBugs Design System: Theme Tokens & Color Palettes
+   Segregated Theme Variables for Light & Dark Mode
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Light Theme */
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F5EFEB;
+  --bg-input: #FFFFFF;
+  --border-color: #E8DFD8;
+  --border-strong: #D6C7BC;
+  --text-primary: #2C1810;
+  --text-secondary: #705D55;
+  --text-muted: #9C8980;
+
+  /* Brand Accents */
+  --brand-primary: #8C4A26;
+  --brand-primary-hover: #733B1D;
+  --brand-accent: #C86D3B;
+  --brand-subtle: #F7EDE7;
+
+  /* Severity Tokens */
+  --priority-critical: #DC2626;
+  --priority-critical-bg: #FEF2F2;
+  --priority-critical-border: #FECACA;
+
+  --priority-high: #EA580C;
+  --priority-high-bg: #FFF7ED;
+  --priority-high-border: #FFEDD5;
+
+  --priority-mild: #D97706;
+  --priority-mild-bg: #FFFBEB;
+  --priority-mild-border: #FEF3C7;
+
+  --priority-low: #2563EB;
+  --priority-low-bg: #EFF6FF;
+  --priority-low-border: #DBEAFE;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(140, 74, 38, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 15px -5px rgba(140, 74, 38, 0.03);
+
+  /* Fonts */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+[data-theme="dark"] {
+  /* Color Palette - Dark Theme */
+  --bg-main: #0C0E12;
+  --bg-card: #151821;
+  --bg-card-subtle: #1C202C;
+  --bg-input: #12151D;
+  --border-color: #272C3D;
+  --border-strong: #383F54;
+  --text-primary: #F3EFEA;
+  --text-secondary: #A9B2C3;
+  --text-muted: #6B768E;
+
+  /* Brand Accents */
+  --brand-primary: #E07A5F;
+  --brand-primary-hover: #EE8A70;
+  --brand-accent: #F4A261;
+  --brand-subtle: #2A1F1B;
+
+  /* Severity Tokens */
+  --priority-critical: #F87171;
+  --priority-critical-bg: #2C1518;
+  --priority-critical-border: #521B22;
+
+  --priority-high: #FB923C;
+  --priority-high-bg: #2C1A14;
+  --priority-high-border: #5A2718;
+
+  --priority-mild: #FBBF24;
+  --priority-mild-bg: #282114;
+  --priority-mild-border: #523D14;
+
+  --priority-low: #60A5FA;
+  --priority-low-bg: #131E33;
+  --priority-low-border: #1E3863;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
