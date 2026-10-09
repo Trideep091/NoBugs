@@ -42,7 +42,7 @@ In the bundled demo, **10,000 log lines across 7 services collapse into 39 incid
 
 ## 📸 Demo
 
-**GitHub URL:** https://nobugsproj.vercel.app/standalone/index.html 
+**Vercel URL:** https://nobugsproj.vercel.app/standalone/index.html 
 
 | Log Ingestion | Incident Dashboard |
 |:---:|:---:|
