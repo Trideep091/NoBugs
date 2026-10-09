@@ -11,19 +11,34 @@
 ![Claude](https://img.shields.io/badge/AI-Claude-D97757)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-[Demo](#-demo) · [Features](#-features) · [Getting Started](#-getting-started) · [Tech Stack](#-tech-stack) · [Limitations](#-current-limitations)
+[What We Built](#-what-we-built) · [Problem Statement](#-problem-statement) · [How to Run](#-how-to-run) · [Demo](#-demo) · [Features](#-features) · [Tech Stack](#-tech-stack) · [Limitations](#-current-limitations)
 
 </div>
 
 ---
 
-## 📖 Overview
+## 🛠️ What We Built
 
-At 3 AM, nobody wants to scroll through 10,000 log lines. **NoBugs** is a log analysis tool built for developers and on-call engineers. It groups repetitive log messages into a small set of ranked incidents, shows how a failure spread across services, and helps you investigate likely root causes without manually scanning logs.
+**NoBugs** is a web-based log analysis tool for developers and on-call engineers. You upload or paste raw logs, and NoBugs:
 
-> **Goal:** Reduce the time needed to investigate large log files by turning repetitive logs into a short list of incidents an engineer can act on.
+1. **Redacts** secrets and personal data (API keys, JWTs, passwords, emails, IPs, credit cards).
+2. **Groups** thousands of log lines into a short list of incident patterns using Drain3 template mining.
+3. **Ranks** those incidents as Critical, High, Mild, or Low, and shows whether each one is accelerating, flat, or decaying.
+4. **Maps** how the failure spread across services (for example `db → payment → checkout → api-gateway`) with a blast radius graph.
+5. **Explains** likely root causes with Claude, which gives competing hypotheses backed by log line citations (with an offline fallback if no API key is set).
+6. **Verifies** a fix by comparing logs from before and after a patch.
 
 In the bundled demo, **10,000 log lines across 7 services collapse into 39 incident patterns**, and the 4 critical ones tell the whole story of the outage.
+
+## 🎯 Problem Statement
+
+**Hackathon problem statement:** _<paste the exact problem statement title / number from the hackathon here>_
+
+**The problem:** When production breaks, on-call engineers face thousands of repetitive log lines, many of them noise or red herrings. Finding which errors matter, which service failed first, and whether a fix worked takes valuable time, often at 3 AM under pressure.
+
+**How NoBugs addresses it:** it turns raw logs into a small, ranked set of incidents, shows the order in which services failed, suggests root-cause hypotheses with evidence, and confirms whether a fix actually stopped the errors.
+
+> **Goal:** Reduce the time needed to investigate large log files by turning repetitive logs into a short list of incidents an engineer can act on.
 
 ## 📸 Demo
 
@@ -106,47 +121,62 @@ In the bundled demo, **10,000 log lines across 7 services collapse into 39 incid
 | Claude API (Anthropic) | Root-cause hypotheses, contrary evidence, and diagnostic tests, with a built-in offline fallback |
 | Privacy Shield | Redaction engine for secrets and PII before analysis |
 
-## 🚀 Getting Started
+## 🚀 How to Run
+
+You can have NoBugs running locally in about 5 minutes. **No API key is needed**: without one, the app uses its built-in offline fallback for AI analysis, so every feature can still be judged.
 
 ### Prerequisites
-- Node.js 18+
-- Python 3.10+
-- *(Optional)* an [Anthropic API key](https://console.anthropic.com/) for live AI investigations
+- [Node.js](https://nodejs.org/) 18 or newer
+- [Python](https://www.python.org/) 3.10 or newer
+- Git
 
-### 1. Clone the repository
+### Step 1: Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/Trideep091/NoBugs.git
+cd NoBugs
 ```
 
-### 2. Start the backend
+### Step 2: Start the backend (FastAPI)
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
-# Optional: enable live AI analysis (otherwise offline fallback rules are used)
-export ANTHROPIC_API_KEY=your_key_here
-
-uvicorn main:app --reload
+uvicorn main:app --reload --port 8000
 ```
+The API will be available at `http://localhost:8000` (interactive docs at `http://localhost:8000/docs`).
 
-### 3. Start the frontend
+### Step 3: Start the frontend (React + Vite)
+Open a **second terminal**:
 ```bash
-cd frontend
+cd NoBugs/frontend
 npm install
 npm run dev
 ```
+Open the URL Vite prints, usually `http://localhost:5173`.
 
-### 4. Try it out
-1. Open the local URL printed by Vite (usually `http://localhost:5173`).
-2. Sign in with **Use Demo On-Call Credentials (1-Click)**, or register a new account.
-3. Click **Load 10,000 Sample Logs**, or upload/paste your own logs.
-4. Explore the **Incident Dashboard**, **Graph Analysis**, and **Time Machine**.
-5. Use **Fix Verification** to compare before-fix and after-fix logs.
+### Step 4: Try it in under a minute
+1. On the login screen, click **Use Demo On-Call Credentials (1-Click)**.
+2. Click **Load 10,000 Sample Logs** (or upload / paste your own `.log`, `.txt`, or `.json` file).
+3. Open **Incident Dashboard** to see the ranked incident patterns.
+4. Open **Graph Analysis** to see the failure cascade and blast radius.
+5. Open **Time Machine** and press play to replay the outage.
+6. Open **Fix Verification** to compare before-fix and after-fix logs.
 
-> 📝 *Folder names and commands above are placeholders. Adjust them to match your repo layout.*
+### Optional: enable live AI investigations
+```bash
+export ANTHROPIC_API_KEY=your_key_here     # Windows: set ANTHROPIC_API_KEY=your_key_here
+```
+Set this in the backend terminal before running `uvicorn`. Never commit your key to the repo.
+
+### Troubleshooting
+| Problem | Fix |
+|---|---|
+| `pip install` fails | Make sure the virtual environment is activated and Python is 3.10+ |
+| Frontend loads but shows network errors | Confirm the backend is running on port 8000 and the frontend's API URL points to it |
+| Port already in use | Run `uvicorn main:app --reload --port 8001` and update the frontend API URL to match |
+
+> 📝 *The `backend/` and `frontend/` folder names, the `main:app` entry point, and port 8000 should be double-checked against the actual repo before submitting.*
 
 ## 🧪 QA Testing & Bug Resolution
 
