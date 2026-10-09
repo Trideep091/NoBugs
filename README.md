@@ -32,7 +32,7 @@ In the bundled demo, **10,000 log lines across 7 services collapse into 39 incid
 
 ## 🎯 Problem Statement
 
-**Hackathon problem statement:** _<paste the exact problem statement title / number from the hackathon here>_
+**Hackathon problem statement:**Finding the signal in 10,000 log lines at 3 a.m. An on-call engineer is paged at three in the morning and has to scroll thousands of near-identical log lines to work out what broke. Build a tool that ingests raw logs, groups similar errors without hand-written rules, and ranks what it finds by impact — when each started, which service it hit, what likely triggered it. A good outcome: a 10,000-line log becomes a handful of incidents someone can act on inside a minute.
 
 **The problem:** When production breaks, on-call engineers face thousands of repetitive log lines, many of them noise or red herrings. Finding which errors matter, which service failed first, and whether a fix worked takes valuable time, often at 3 AM under pressure.
 
