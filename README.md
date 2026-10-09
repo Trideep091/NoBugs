@@ -209,7 +209,6 @@ NoBugs was tested across pages, APIs, and viewports to hold up under real on-cal
 - **AI cloud dependency:** live AI investigations need an Anthropic API key; without one the app uses offline fallback rules.
 
 ## 🔮 Future Improvements
-
 - Deeper AI-powered root-cause investigation with supporting log evidence
 - Richer service dependency and blast radius visualization
 - Improved structured log parsing, including multiline stack traces
