@@ -52,12 +52,7 @@ In the bundled demo, **10,000 log lines across 7 services collapse into 39 incid
 |:---:|:---:|
 | ![Graph Analysis](docs/screenshots/graph-analysis.jpeg) | ![Time Machine](docs/screenshots/time-machine.jpeg) |
 
-<details>
-<summary>Login screen</summary>
 
-![Login](docs/screenshots/login.jpeg)
-
-</details>
 
 ## ✨ Features
 
@@ -155,7 +150,7 @@ npm run dev
 Open the URL Vite prints, usually `http://localhost:5173`.
 
 ### Step 4: Try it in under a minute
-1. On the login screen, click **Use Demo On-Call Credentials (1-Click)**.
+1. Click **Use Demo On-Call Credentials (1-Click)**.
 2. Click **Load 10,000 Sample Logs** (or upload / paste your own `.log`, `.txt`, or `.json` file).
 3. Open **Incident Dashboard** to see the ranked incident patterns.
 4. Open **Graph Analysis** to see the failure cascade and blast radius.
@@ -218,14 +213,7 @@ NoBugs was tested across pages, APIs, and viewports to hold up under real on-cal
 
 ## 👥 Team
 
-Built by the **NoBugs Team** for _<Navomesh>_.
-
-
-2392608131 Trideep Chakraborty
-2392608186 Rahul Sahu
-2392608006 Srijan Halder
-2392608110 Daksh Jain
-2392608223 Harshit Sharma
+Built by the **NoBugs Team** for _<hackathon name>_.
 
 <!-- Add team member names and links here -->
 
