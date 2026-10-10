@@ -213,8 +213,8 @@ NoBugs was tested across pages, APIs, and viewports to hold up under real on-cal
 
 ## 👥 Team
 
-Built by the **NoBugs Team** for _<hackathon name>_.
-Built by the **NoBugs Team** for _<Navomesh>_.
+Built by the **Navonemesh** for _<Protothon>_.
+
 
 
 2392608131 Trideep Chakraborty <br>
