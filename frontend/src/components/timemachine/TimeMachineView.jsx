@@ -14,107 +14,96 @@ import {
 } from 'lucide-react';
 
 export default function TimeMachineView({ incidents, session }) {
-  const [currentSecond, setCurrentSecond] = useState(180); // Default to onset (03:03:00)
+  const [currentSecond, setCurrentSecond] = useState(0); // Starts at 02:00:00 (Baseline)
   const [isPlaying, setIsPlaying] = useState(false);
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
 
-  // Playback timer
+  // Playback timer (7200 seconds = 2-hour timeline)
   useEffect(() => {
     let interval = null;
     if (isPlaying) {
       interval = setInterval(() => {
         setCurrentSecond((prev) => {
-          if (prev >= 600) {
+          if (prev >= 7200) {
             setIsPlaying(false);
-            return 600;
+            return 7200;
           }
-          return prev + 5 * playbackSpeed;
+          return Math.min(7200, prev + 10 * playbackSpeed);
         });
-      }, 200);
+      }, 150);
     }
     return () => clearInterval(interval);
   }, [isPlaying, playbackSpeed]);
 
   const formatTimestamp = (sec) => {
-    const mins = Math.floor(sec / 60);
-    const secs = sec % 60;
-    return `03:${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    const baseHour = 2; // 02:00:00
+    const totalSec = baseHour * 3600 + sec;
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+    return `${h < 10 ? '0' : ''}${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  // Determine active failure phase
+  // Determine active failure phase across 2-hour timeline
   const getPhaseInfo = (sec) => {
-    if (sec < 120) {
+    if (sec < 2400) {
       return {
-        title: 'Phase 0 • Baseline Traffic',
+        title: 'Phase 0 • Baseline Traffic (02:00 - 02:40)',
         status: 'Healthy',
-        desc: 'Routine HTTP requests, auth token verifications, and background vacuuming.',
+        desc: 'Routine HTTP requests, auth token verifications, and background vacuuming (~1,450 req/s).',
         color: 'text-emerald-600 dark:text-emerald-400',
         badge: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
       };
     }
-    if (sec < 180) {
+    if (sec < 3900) {
       return {
-        title: 'Phase 1 • Red Herring (Cache Miss Burst)',
-        status: 'Warning',
-        desc: 'Cache miss rate spiked on user_session keys; fallback queries hit replica but system is stable.',
+        title: 'Phase 1 • Early Warning & Mild Drift (02:40 - 03:05)',
+        status: 'Mild',
+        desc: 'Cache miss rate spiked on user_session keys; query acquisition latency elevated to 1,200ms.',
         color: 'text-amber-600 dark:text-amber-400',
         badge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
       };
     }
-    if (sec < 255) {
+    if (sec < 5700) {
       return {
-        title: 'Phase 2 • ROOT CAUSE: DB Connection Pool Saturation',
-        status: 'CRITICAL ONSET',
-        desc: 'Connection pool lease times spike to 3420ms, followed by 5000ms timeouts on postgres-primary.',
+        title: 'Phase 2 • ROOT CAUSE CASCADE: Critical Collapse (03:05 - 03:35)',
+        status: 'Critical',
+        desc: 'Connection pool saturation (475 timeouts). Payment circuit breaker tripped OPEN. Checkout returning 503.',
         color: 'text-red-600 dark:text-red-400',
         badge: 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300',
       };
     }
-    if (sec < 310) {
+    if (sec < 6600) {
       return {
-        title: 'Phase 3 • Cascade: Payment Circuit Breaker Trips',
-        status: 'CASCADE FAILURE',
-        desc: 'Payment service RPC calls block waiting for DB and timeout after 30s. Circuit breaker opens to 80% error threshold.',
-        color: 'text-red-600 dark:text-red-400',
-        badge: 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300',
-      };
-    }
-    if (sec < 360) {
-      return {
-        title: 'Phase 4 • Cascade: Checkout 503 Outage',
-        status: 'SERVICE OUTAGE',
-        desc: 'Checkout service receives HTTP 503 from downstream payment service; retries fail and carts drop.',
-        color: 'text-red-600 dark:text-red-400',
-        badge: 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300',
+        title: 'Phase 3 • Mild Recovery in Progress (03:35 - 03:50)',
+        status: 'Mild',
+        desc: 'PgBouncer multiplexer deployed. Payment circuit breaker in HALF-OPEN probe state.',
+        color: 'text-amber-600 dark:text-amber-400',
+        badge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
       };
     }
     return {
-      title: 'Phase 5 • Global Impact: Ingress Orders Failing',
-      status: 'HIGH-IMPACT OUTAGE',
-      desc: 'API Gateway 5xx rate exceeds threshold (5.8% > 1.0%); customer checkout requests fail with 503.',
-      color: 'text-red-600 dark:text-red-400',
-      badge: 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300',
+      title: 'Phase 4 • Fully Recovered Baseline (03:50 - 04:00)',
+      status: 'Healthy',
+      desc: 'All HTTP 5xx errors eliminated. Connection pool latency returned to baseline 12ms.',
+      color: 'text-emerald-600 dark:text-emerald-400',
+      badge: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
     };
   };
 
   const currentPhase = getPhaseInfo(currentSecond);
 
-  // Compute status per service based on currentSecond
+  // Compute status per service based on currentSecond: Healthy (Green), Mild (Yellow), Critical (Red)
   const getServiceHealth = (svc) => {
-    if (svc === 'db') {
-      return currentSecond < 180 ? 'Healthy' : currentSecond < 240 ? 'Degraded' : 'Critical';
+    if (currentSecond < 2400) return 'Healthy';
+    if (currentSecond < 3900) {
+      return (svc === 'cache' || svc === 'db') ? 'Mild' : 'Healthy';
     }
-    if (svc === 'payment') {
-      return currentSecond < 250 ? 'Healthy' : currentSecond < 310 ? 'Degraded' : 'Critical';
+    if (currentSecond < 5700) {
+      return svc === 'cache' ? 'Mild' : 'Critical';
     }
-    if (svc === 'checkout') {
-      return currentSecond < 300 ? 'Healthy' : currentSecond < 360 ? 'Degraded' : 'Critical';
-    }
-    if (svc === 'api-gateway') {
-      return currentSecond < 350 ? 'Healthy' : 'Critical';
-    }
-    if (svc === 'cache') {
-      return currentSecond >= 120 && currentSecond < 220 ? 'Warning' : 'Healthy';
+    if (currentSecond < 6600) {
+      return 'Mild';
     }
     return 'Healthy';
   };
@@ -197,17 +186,18 @@ export default function TimeMachineView({ incidents, session }) {
           <input
             type="range"
             min={0}
-            max={600}
-            step={1}
+            max={7200}
+            step={5}
             value={currentSecond}
             onChange={(e) => setCurrentSecond(Number(e.target.value))}
             className="w-full h-2.5 bg-[#E8DFD8] dark:bg-[#272C3D] rounded-lg appearance-none cursor-pointer accent-[#8C4A26] dark:accent-[#E07A5F]"
           />
           <div className="flex justify-between text-[11px] font-mono text-[#9C8980] dark:text-[#6B768E]">
-            <span>03:00:00 (Baseline)</span>
-            <span className="text-[#8C4A26] dark:text-[#E07A5F] font-bold">03:03:00 (Onset)</span>
-            <span>03:06:00 (Gateway 503)</span>
-            <span>03:10:00 (End)</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">02:00:00 (Baseline)</span>
+            <span>02:30:00 (Normal)</span>
+            <span className="text-amber-600 dark:text-amber-400 font-bold">03:00:00 (Mild Drift)</span>
+            <span className="text-red-600 dark:text-red-400 font-bold">03:30:00 (Critical Peak)</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">04:00:00 (Recovered)</span>
           </div>
         </div>
 
